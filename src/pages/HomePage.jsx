@@ -164,12 +164,12 @@ export default function HomePage() {
       </section>
 
       <section className="section-shell">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div className="space-y-6">
+        <div className="mx-auto max-w-3xl">
+          <div className="space-y-6 text-center">
             <SectionHeader eyebrow="Sponsors" title="Sponsor showcase area" />
             <div className="grid gap-4">
               {sponsorTiers.map((tier) => (
-                <div key={tier.name} className="glass-card p-5">
+                <div key={tier.name} className="glass-card p-5 text-center">
                   <p className="text-lg font-bold text-[var(--navy)]">
                     {tier.name}
                   </p>
