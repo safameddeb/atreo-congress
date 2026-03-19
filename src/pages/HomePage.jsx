@@ -166,19 +166,19 @@ export default function HomePage() {
       <section className="section-shell">
         <div className="mx-auto max-w-3xl">
           <div className="space-y-6 text-center">
-            <SectionHeader eyebrow="Sponsors" title="Sponsor showcase area" />
+            <SectionHeader eyebrow="Sponsors" title="Our Sponsors" />
             <div className="grid gap-4">
               {sponsorTiers.map((tier) => (
                 <div key={tier.name} className="glass-card p-5 text-center">
                   <p className="text-lg font-bold text-[var(--navy)]">
                     {tier.name}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {tier.description}
-                  </p>
                 </div>
               ))}
             </div>
+            <Link to="/sponsors" className="btn-primary mt-8">
+              Full list of sponsors
+            </Link>
           </div>
         </div>
       </section>
