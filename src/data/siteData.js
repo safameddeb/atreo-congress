@@ -267,7 +267,7 @@ export const registerFields = [
   },
 ];
 export const presidentWelcome = {
-  role: "Message from the President",
+  role: "ATREO President’s Message",
   name: "Dr Amel Ben Brahim",
   title: "Welcome to the 11th ATREO Congress",
   image: presidentPhoto,
@@ -282,6 +282,35 @@ export const presidentWelcome = {
 
   ],
 };
+
+
+export const presidentcongressWelcome = {
+  role: "Congress President’s Message",
+  name: "Dr Yamen Laabidi",
+  title: "Welcome to the 11th ATREO Congress",
+  image: yamen,
+  message: [
+
+"In recent years, orthodontics has undergone a remarkable transformation, driven by significant clinical and technological advancements.",
+
+"These developments are the result of years of clinical research and technical innovation, led by talented clinicians whose creativity and ingenuity continue to push the boundaries of conventional orthodontics.",
+
+"We invite you to join us in celebrating these achievements and the evolution of our specialty at the ATREO Annual Congress. We will have the pleasure of welcoming a distinguished panel of speakers, eager to share their clinical expertise and experience.",
+
+"This event will also be a wonderful opportunity to strengthen the Tunisian–Emirati friendship in an exceptional setting.",
+
+"We look forward to seeing you on June 13th and 14th for two days of exchange and knowledge sharing.",
+
+
+
+
+  ],
+};
+
+
+
+
+
 export const sponsorGroups = [
   {
     tier: "Gold Sponsors",

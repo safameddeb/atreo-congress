@@ -8,6 +8,8 @@ import {
   sponsorTiers,
   sponsorsPreview,
   presidentWelcome,
+  presidentcongressWelcome,
+
 } from "../data/siteData";
 
 export default function HomePage() {
@@ -102,6 +104,51 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
+
+<section className="section-shell">
+        <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <img
+                src={presidentcongressWelcome.image}
+                alt={presidentcongressWelcome.name}
+                className="h-64 w-64 rounded-[2rem] object-cover border-4 border-white shadow-2xl sm:h-72 sm:w-72 lg:h-[340px] lg:w-[300px]"
+              />
+
+              <div className="mt-5">
+                <p className="text-2xl font-bold text-[var(--navy)] sm:text-3xl">
+                  {presidentcongressWelcome.name}
+                </p>
+                <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
+                  President of the Congress
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              <SectionHeader
+                eyebrow={presidentcongressWelcome.role}
+                title={presidentcongressWelcome.title}
+              />
+
+              <div className="rounded-[1.75rem] border border-slate-200 bg-white/85 p-6 shadow-sm sm:p-8">
+                <div className="space-y-5 text-[15px] leading-8 text-slate-700 sm:text-base">
+                  {presidentcongressWelcome.message.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
 
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
