@@ -38,7 +38,7 @@ import hdc from "../assets/sponsors/hdc.jpeg";
 import worldOrthodontics from "../assets/sponsors/logo-world-orthodontics-v4-1.png";
 import nagati from "../assets/sponsors/nagati.jpeg";
 import newmed from "../assets/sponsors/newmed.png";
-import orthopartner from "../assets/sponsors/orthopartner.png";
+import orthopartner from "../assets/sponsors/orthoPartner.png";
 import orthoprimo from "../assets/sponsors/orthoprimo.jpg";
 import premiumOrtho from "../assets/sponsors/premium-ortho.jpg";
 import meduse from "../assets/sponsors/meduse.jpg";
