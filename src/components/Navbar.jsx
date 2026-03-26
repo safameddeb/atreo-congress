@@ -20,7 +20,7 @@ export default function Navbar() {
           <img
             src={congress.logos}
             alt="ATREO and EOS logos"
-            className="h-12 w-auto rounded-xl object-cover shadow-sm sm:h-14"
+            className="h-12 w-auto rounded-xl object-cover shadow-sm sm:h-18"
           />
           <div className="hidden sm:block">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">ATREO Congress</p>

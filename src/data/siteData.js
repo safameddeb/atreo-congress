@@ -16,29 +16,38 @@ import ilyes from "../assets/ILYES TIBAOUI.png";
 import jean from "../assets/jean.png";
 import khaled from "../assets/khaled.png";
 import mulhim from "../assets/mulhim duirieh.jpeg";
-import nicolas from "../assets/NICOLAS GOOSENS.jpeg";
 import rafika from "../assets/RAFIKA HARMIM.jpeg";
 import ramzi from "../assets/RAMZI HADDED.png";
-import rudy from "../assets/rudy.jpeg";
+import lisette from "../assets/lisette.jpg";
+import maria from "../assets/maria.jpg";
 import skandar from "../assets/skandar ellouze.jpg";
 import salvadorromero from "../assets/WhatsApp Image 2026-03-17 at 05.57.50.jpeg";
 import yamen from "../assets/YAAMEN LAABIDI.jpeg";
 import zouhair_abidine from "../assets/ZOUHAIR ABIDINE.png";
 import zouhair_meskini from "../assets/zouhair meskini.png";
 import presidentPhoto from "../assets/president.jpg";
-import advamed from "../assets/sponsors/advanced-medical-technology-association-advamed-logo-vector.png";
+import advamed from "../assets/sponsors/advanced.png";
 import angelAligner from "../assets/sponsors/angel aligner.png";
+
 import ao from "../assets/sponsors/ao.png";
 import degitalconcept from "../assets/sponsors/degitalconcept.png";
+import diamond from "../assets/sponsors/diamond.png";
 import expressMedical from "../assets/sponsors/express medical.png";
 import gum from "../assets/sponsors/gum.jpeg";
 import hdc from "../assets/sponsors/hdc.jpeg";
 import worldOrthodontics from "../assets/sponsors/logo-world-orthodontics-v4-1.png";
-import moov from "../assets/sponsors/moov.png";
 import nagati from "../assets/sponsors/nagati.jpeg";
 import newmed from "../assets/sponsors/newmed.png";
-import ormco from "../assets/sponsors/ormco.png";
+import orthopartner from "../assets/sponsors/orthopartner.png";
+import orthoprimo from "../assets/sponsors/orthoprimo.jpg";
 import premiumOrtho from "../assets/sponsors/premium-ortho.jpg";
+import meduse from "../assets/sponsors/meduse.jpg";
+import newmedplus from "../assets/sponsors/newmedplus.png";
+import jasminaligners from "../assets/sponsors/jasminaligners.jpg";
+import alignright from "../assets/sponsors/alignright.png";
+import invisalign from "../assets/sponsors/invisalign.png";
+
+
 export const congress = {
   title: "11th International Orthodontics Congress",
   subtitle: "ATREO International Orthodontics Congress",
@@ -71,8 +80,8 @@ export const keynoteSpeakers = [
   },
   {
     name: "Dr. Mulhem Dumirieh",
-    nationality: "United Arab Emirates",
-    flag: "🇦🇪",
+    nationality: "Syria",
+    flag: "🇸🇾",
     image: mulhim,
   },
 ];
@@ -91,8 +100,8 @@ export const speakers = [
   },
   {
     name: "Dr. Mulhem Dumirieh",
-    nationality: "United Arab Emirates",
-    flag: "🇦🇪",
+    nationality: "Syria",
+    flag: "🇸🇾",
     image: mulhim,
   },
   {
@@ -100,6 +109,12 @@ export const speakers = [
     nationality: "Italy",
     flag: "🇮🇹",
     image: vittorio,
+  },
+    {
+    name: "Dr. María Hernández Vilarrasa",
+    nationality: "Spain",
+    flag: "🇪🇸",
+    image: maria,
   },
   {
     name: "Dr. Fethi Jebri",
@@ -144,16 +159,10 @@ export const speakers = [
     image: khaled,
   },
   {
-    name: "Dr. Rudy Labor",
-    nationality: "France",
-    flag: "🇫🇷",
-    image: rudy,
-  },
-  {
-    name: "Dr. Nicolas Goosens",
-    nationality: "France",
-    flag: "🇫🇷",
-    image: nicolas,
+    name: "Dr. Lisette Rodrigues",
+    nationality: "Spain",
+    flag: "🇪🇸",
+    image: lisette,
   },
   {
     name: "Dr. Rafika Harmim",
@@ -227,16 +236,17 @@ export const sponsorTiers = [
     description:
       "Premium visibility on the congress website, key sponsor placements, and stage mention.",
   },
+    {
+    name: "Bronze",
+    description:
+      "Logo presence across event materials and the official congress sponsor area.",
+  },
   {
     name: "Silver",
     description:
       "Highlighted placement in sponsor showcases, collateral support, and branded exposure.",
   },
-  {
-    name: "Bronze",
-    description:
-      "Logo presence across event materials and the official congress sponsor area.",
-  },
+
 ];
 
 export const sponsorsPreview = sponsorsBoard;
@@ -262,39 +272,49 @@ export const presidentWelcome = {
   title: "Welcome to the 11th ATREO Congress",
   image: presidentPhoto,
   message: [
-    "We are pleased to invite you to participate in the 11th ATREO Congress, which will be held in Hammamet at the Royal Tulip Taj Sultan Hotel on June 13–14, 2026.",
-    "This international scientific event will bring together 20 renowned speakers and 150 participating orthodontists. It is organized in collaboration with the Emirates Orthodontic Society (EOS), further strengthening our ties of friendship and expanding our international outreach.",
-    "This congress represents a unique opportunity to take part in a major event in our specialty, to develop strategic partnerships, and to showcase your latest innovations to a targeted audience of professionals.",
-    "We sincerely look forward to your presence.",
+        "Dear colleagues, dear friends,",
+    "It is with great pleasure that we welcome you to the ATREO Congress, held on June 13–14 in Hammamet, in collaboration with the European Orthodontic Society (EOS).",
+    "This scientific event will provide a valuable opportunity for exchange, sharing of experiences, and enrichment around the latest advances in orthodontics.",
+    "We are honored to bring together renowned speakers and a committed community driven by a passion for our discipline.",
+    "Beyond the scientific sessions, this congress is also intended to be a moment of conviviality and meaningful encounters.",
+    "We wish you an excellent congress and a pleasant stay with us.",
+
+
   ],
 };
 export const sponsorGroups = [
   {
     tier: "Gold Sponsors",
     logos: [
-      { name: "Angel Aligner", image: angelAligner },
-      { name: "AO", image: ao },
       { name: "Newmed", image: newmed },
-    ],
-  },
-  {
-    tier: "Silver Sponsors",
-    logos: [
-      { name: "Premium Ortho", image: premiumOrtho },
-      { name: "Ormco", image: ormco },
-      { name: "World Orthodontics", image: worldOrthodontics },
-      { name: "HDC", image: hdc },
+      { name: "Degital Concept", image: degitalconcept },
+      { name: "invisalign", image: invisalign },
+      { name: "diamond", image: diamond },
+
     ],
   },
   {
     tier: "Bronze Sponsors",
     logos: [
-      { name: "GUM", image: gum },
-      { name: "Express Medical", image: expressMedical },
-      { name: "Advamed", image: advamed },
-      { name: "Degital Concept", image: degitalconcept },
-      { name: "Moov", image: moov },
+      { name: "orthopartner", image: orthopartner },
       { name: "Nagati", image: nagati },
+      { name: "orthoprimo", image: orthoprimo },
+      { name: "Express Medical", image: expressMedical },
+    ],
+  },
+  {
+    tier: "Silver Sponsors",
+    logos: [
+      { name: "jasminaligners", image: jasminaligners },
+      { name: "GUM", image: gum },
+      { name: "meduse", image: meduse },
+      { name: "angelAligner", image: angelAligner },
+      { name: "HDC", image: hdc },
+      { name: "newmedplus", image: newmedplus },
+      { name: "alignright", image: alignright },
+
+
+
     ],
   },
 ];

@@ -61,7 +61,7 @@ export default function RegisterForm() {
           Congress registration
         </p>
         <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
-          Register for MOIP 2026
+          Register for ATREO congress 2026
         </h2>
         <p className="mt-3 max-w-2xl text-sm text-white/80 sm:text-base">
           Fill in the form below with your name, specialty, country, city, and
