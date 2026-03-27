@@ -47,6 +47,7 @@ import jasminaligners from "../assets/sponsors/jasminaligners.jpg";
 import alignright from "../assets/sponsors/alignright.png";
 import invisalign from "../assets/sponsors/invisalign.png";
 import dentamed from "../assets/sponsors/dentamed.png";
+import zeidoun from "../assets/sponsors/zeidoun.png";
 
 
 
@@ -344,6 +345,7 @@ export const sponsorGroups = [
       { name: "newmedplus", image: newmedplus },
       { name: "alignright", image: alignright },
       { name: "dentamed", image: dentamed },
+      { name: "zeidoun", image: zeidoun },
 
 
 
