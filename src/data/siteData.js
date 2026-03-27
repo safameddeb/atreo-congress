@@ -46,6 +46,8 @@ import newmedplus from "../assets/sponsors/newmedplus.png";
 import jasminaligners from "../assets/sponsors/jasminaligners.jpg";
 import alignright from "../assets/sponsors/alignright.png";
 import invisalign from "../assets/sponsors/invisalign.png";
+import dentamed from "../assets/sponsors/dentamed.png";
+
 
 
 export const congress = {
@@ -341,6 +343,7 @@ export const sponsorGroups = [
       { name: "HDC", image: hdc },
       { name: "newmedplus", image: newmedplus },
       { name: "alignright", image: alignright },
+      { name: "dentamed", image: dentamed },
 
 
 
