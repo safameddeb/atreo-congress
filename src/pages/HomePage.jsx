@@ -173,7 +173,7 @@ export default function HomePage() {
             <div>
               <SectionHeader
                 eyebrow="Program"
-                title="Two-day scientific program"
+                title="Two day scientific program"
               />
               <div className="mt-6 space-y-4">
                 {programmeDays.map((day) => (

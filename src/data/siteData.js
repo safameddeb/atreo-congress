@@ -49,7 +49,7 @@ import mdc from "../assets/sponsors/mdc.jpg";
 
 export const congress = {
   title: "11th International Orthodontics Congress",
-  subtitle: "ATREO International Orthodontics Congress",
+  subtitle: "ATREO International Orthodontic Congress",
   theme: "Sun, Sea & Smiles",
   dates: "13–14 June 2026",
   hotel: "Golden Tulip Taj Sultan, Hammamet",
