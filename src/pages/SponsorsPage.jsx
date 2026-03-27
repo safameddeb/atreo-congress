@@ -25,12 +25,12 @@ export default function SponsorsPage() {
                 {group.logos.map((logo) => (
                   <div
                     key={logo.name}
-                    className="flex h-36 items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                    className="flex h-48 items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                   >
                     <img
                       src={logo.image}
                       alt={logo.name}
-                      className="max-h-20 w-auto max-w-full object-contain"
+                      className="max-h-32 w-auto max-w-full object-contain"
                     />
                   </div>
                 ))}

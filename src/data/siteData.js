@@ -26,28 +26,24 @@ import yamen from "../assets/YAAMEN LAABIDI.jpeg";
 import zouhair_abidine from "../assets/ZOUHAIR ABIDINE.png";
 import zouhair_meskini from "../assets/zouhair meskini.png";
 import presidentPhoto from "../assets/president.jpg";
-import advamed from "../assets/sponsors/advanced.png";
 import angelAligner from "../assets/sponsors/angel aligner.png";
 
-import ao from "../assets/sponsors/ao.png";
-import degitalconcept from "../assets/sponsors/degitalconcept.png";
 import diamond from "../assets/sponsors/diamond.png";
 import expressMedical from "../assets/sponsors/express medical.png";
 import gum from "../assets/sponsors/gum.jpeg";
-import hdc from "../assets/sponsors/hdc.jpeg";
-import worldOrthodontics from "../assets/sponsors/logo-world-orthodontics-v4-1.png";
 import nagati from "../assets/sponsors/nagati.jpeg";
 import newmed from "../assets/sponsors/newmed.png";
 import orthopartner from "../assets/sponsors/orthoPartner.png";
-import orthoprimo from "../assets/sponsors/orthoprimo.jpg";
-import premiumOrtho from "../assets/sponsors/premium-ortho.jpg";
 import meduse from "../assets/sponsors/meduse.jpg";
 import newmedplus from "../assets/sponsors/newmedplus.png";
-import jasminaligners from "../assets/sponsors/jasminaligners.jpg";
+import jasminaligners from "../assets/sponsors/jasminaligners.png";
 import alignright from "../assets/sponsors/alignright.png";
 import invisalign from "../assets/sponsors/invisalign.png";
 import dentamed from "../assets/sponsors/dentamed.png";
 import zeidoun from "../assets/sponsors/zeidoun.png";
+import zeidoun2 from "../assets/sponsors/zeidoun2.png";
+import handsom from "../assets/sponsors/handsom.png";
+import mdc from "../assets/sponsors/mdc.jpg";
 
 
 
@@ -319,9 +315,10 @@ export const sponsorGroups = [
     tier: "Gold Sponsors",
     logos: [
       { name: "Newmed", image: newmed },
-      { name: "Degital Concept", image: degitalconcept },
       { name: "invisalign", image: invisalign },
       { name: "diamond", image: diamond },
+      { name: "angelAligner", image: angelAligner },
+      { name: "mdc", image: mdc },
 
     ],
   },
@@ -330,22 +327,23 @@ export const sponsorGroups = [
     logos: [
       { name: "orthopartner", image: orthopartner },
       { name: "Nagati", image: nagati },
-      { name: "orthoprimo", image: orthoprimo },
+      { name: "zeidoun", image: zeidoun },
+      { name: "zeidoun2", image: zeidoun2 },
       { name: "Express Medical", image: expressMedical },
+      { name: "alignright", image: alignright },
+
     ],
   },
   {
     tier: "Silver Sponsors",
     logos: [
       { name: "jasminaligners", image: jasminaligners },
+      { name: "handsom", image: handsom },
       { name: "GUM", image: gum },
       { name: "meduse", image: meduse },
-      { name: "angelAligner", image: angelAligner },
-      { name: "HDC", image: hdc },
       { name: "newmedplus", image: newmedplus },
-      { name: "alignright", image: alignright },
       { name: "dentamed", image: dentamed },
-      { name: "zeidoun", image: zeidoun },
+
 
 
 
