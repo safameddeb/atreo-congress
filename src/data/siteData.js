@@ -75,24 +75,11 @@ export const imageSpeakers = [
 ]
 
 export const keynoteSpeakers = [
-  {
+ {
     name: "Dr. Abdelhakim Elgheriani",
     nationality: "United Arab Emirates",
     flag: "🇦🇪",
     image: abdelhakim,
-  },
-  {
-    name: "Dr. Zouhair Meskini",
-    nationality: "Tunisia",
-    flag: "🇹🇳",
-    image: zouhair_meskini,
-  },
-
-  {
-    name: "Dr. Mulhem Dumirieh",
-    nationality: "Syria",
-    flag: "🇸🇾",
-    image: mulhim,
   },
   {
     name: "Dr. Yamen Labidi",
@@ -100,19 +87,113 @@ export const keynoteSpeakers = [
     flag: "🇹🇳",
     image: yamen,
   },
-
+  {
+    name: "Dr. Mulhem Dumirieh",
+    nationality: "Syria",
+    flag: "🇸🇾",
+    image: mulhim,
+  },
+  {
+    name: "Dr. Vittorio Cacciafesta",
+    nationality: "Italy",
+    flag: "🇮🇹",
+    image: vittorio,
+  },
     {
     name: "Dr. María Hernández Vilarrasa",
     nationality: "Spain",
     flag: "🇪🇸",
     image: maria,
   },
-
+  {
+    name: "Dr. Fethi Jebri",
+    nationality: "Tunisia",
+    flag: "🇹🇳",
+    image: fethi,
+  },
+  {
+    name: "Dr. Ramzi Hadded",
+    nationality: "Lebanon",
+    flag: "🇱🇧",
+    image: ramzi,
+  },
+  {
+    name: "Dr. Ilyes Tibaoui",
+    nationality: "Algeria",
+    flag: "🇩🇿",
+    image: ilyes,
+  },
   {
     name: "Dr. Skandar Ellouze",
     nationality: "Tunisia",
     flag: "🇹🇳",
     image: skandar,
+  },
+  {
+    name: "Dr. Ignacio Arcos Palomino",
+    nationality: "Spain",
+    flag: "🇪🇸",
+    image: ignacio,
+  },
+  {
+    name: "Dr. Jean-François Ernoult",
+    nationality: "France",
+    flag: "🇫🇷",
+    image: jean,
+  },
+  {
+    name: "Dr. Khaled Aboulazm",
+    nationality: "Egypt",
+    flag: "🇪🇬",
+    image: khaled,
+  },
+  {
+    name: "Dr. Lisette Rodrigues",
+    nationality: "Spain",
+    flag: "🇪🇸",
+    image: lisette,
+  },
+  {
+    name: "Dr. Rafika Harmim",
+    nationality: "Algeria",
+    flag: "🇩🇿",
+    image: rafika,
+  },
+  {
+    name: "Dr. Salvador Romero",
+    nationality: "Mexico",
+    flag: "🇲🇽",
+    image: salvadorromero,
+  },
+  {
+    name: "Dr. Zouhair Abidine",
+    nationality: "Morocco",
+    flag: "🇲🇦",
+    image: zouhair_abidine,
+  },
+  {
+    name: "Dr. Ambra Michelotti",
+    nationality: "Italy",
+    flag: "🇮🇹",
+    image: ambre,
+  },
+  {
+    name: "Dr. Romain Radjei",
+    nationality: "France",
+    flag: "🇫🇷",
+    image: romain,
+  },
+  {
+    name: "Dr. Patrice Bergeyron",
+    nationality: "Switzerland",
+    flag: "🇨🇭",
+    image: patrice,
+  },
+  {
+    name: "Dr. Zouhair Meskini",
+    nationality: "Tunisia",
+    flag: "🇹🇳",
+    image: zouhair_meskini,
   },
 ];
 export const speakers = [

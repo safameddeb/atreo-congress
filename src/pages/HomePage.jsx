@@ -156,19 +156,27 @@ export default function HomePage() {
 <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
-          <Link
-            to="/speakers"
-            ///className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white"
-            className="rounded-full bg-blue-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"          >
-            See all
-          </Link>
+
         </div>
 <div className="flex justify-center">
   {imageSpeakers.map((speaker) => (
     <Speakerimg key={speaker.name + speaker.role} speaker={speaker} />
   ))}
 </div>
+
+<div className="flex justify-center mt-8">
+  <Link
+    to="/speakers"
+    className="rounded-full bg-yellow-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-yellow-600"
+  >
+    See all
+  </Link>
+</div>
+
       </section>
+
+
+
 
 
 

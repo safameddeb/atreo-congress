@@ -16,10 +16,10 @@ export default function SpeakerCard({ speaker }) {
       </div>
 
       <div className="px-4 pb-5 pt-4 text-center">
-        <h3 className="text-base font-extrabold uppercase leading-snug text-white sm:text-lg">
+        <h3 className="text-sm font-extrabold uppercase leading-snug text-white sm:text-base">
           {speaker.name}
         </h3>
-        <p className="mt-2 text-sm font-medium text-[#d7e6ff] sm:text-base">
+        <p className="mt-1 text-xs font-medium text-[#d7e6ff] sm:text-sm">
           {speaker.nationality}
         </p>
       </div>
