@@ -107,7 +107,7 @@ export default function HomePage() {
 
 
 
-<section className="section-shell">
+      <section className="section-shell">
         <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -155,8 +155,8 @@ export default function HomePage() {
           <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
           <Link
             to="/speakers"
-            className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white"
-          >
+            ///className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white"
+            className="rounded-full bg-blue-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"          >
             See all
           </Link>
         </div>

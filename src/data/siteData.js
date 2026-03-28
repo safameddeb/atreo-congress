@@ -72,16 +72,37 @@ export const keynoteSpeakers = [
     image: abdelhakim,
   },
   {
-    name: "Dr. Ambra Michelotti",
-    nationality: "Italy",
-    flag: "🇮🇹",
-    image: ambre,
+    name: "Dr. Zouhair Meskini",
+    nationality: "Tunisia",
+    flag: "🇹🇳",
+    image: zouhair_meskini,
   },
+
   {
     name: "Dr. Mulhem Dumirieh",
     nationality: "Syria",
     flag: "🇸🇾",
     image: mulhim,
+  },
+  {
+    name: "Dr. Yamen Labidi",
+    nationality: "Tunisia",
+    flag: "🇹🇳",
+    image: yamen,
+  },
+
+    {
+    name: "Dr. María Hernández Vilarrasa",
+    nationality: "Spain",
+    flag: "🇪🇸",
+    image: maria,
+  },
+
+  {
+    name: "Dr. Skandar Ellouze",
+    nationality: "Tunisia",
+    flag: "🇹🇳",
+    image: skandar,
   },
 ];
 export const speakers = [
