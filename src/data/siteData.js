@@ -44,6 +44,8 @@ import zeidoun from "../assets/sponsors/zeidoun.png";
 import zeidoun2 from "../assets/sponsors/zeidoun2.png";
 import handsom from "../assets/sponsors/handsom.png";
 import mdc from "../assets/sponsors/mdc.jpg";
+import ourspeakers from "../assets/ourspeakers.jpg";
+
 
 
 
@@ -64,6 +66,14 @@ export const congress = {
     { label: "Instagram", value: "atreo-ig" },
   ],
 };
+
+export const imageSpeakers = [
+  {
+
+    image: ourspeakers,
+  },
+]
+
 export const keynoteSpeakers = [
   {
     name: "Dr. Abdelhakim Elgheriani",

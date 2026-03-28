@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import SpeakerCard from "../components/SpeakerCard";
+import Speakerimg from "../components/imagespeaker";
+
 import {
   congress,
+  imageSpeakers,
   keynoteSpeakers,
   programmeDays,
   sponsorTiers,
@@ -150,6 +153,31 @@ export default function HomePage() {
 
 
 
+<section className="section-shell space-y-10">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
+          <Link
+            to="/speakers"
+            ///className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white"
+            className="rounded-full bg-blue-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"          >
+            See all
+          </Link>
+        </div>
+<div className="flex justify-center">
+  {imageSpeakers.map((speaker) => (
+    <Speakerimg key={speaker.name + speaker.role} speaker={speaker} />
+  ))}
+</div>
+      </section>
+
+
+
+
+
+
+
+{/*
+
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
@@ -166,7 +194,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
+ */}
       <section className="section-shell">
         <div className="marble-bg glass-card p-6 sm:p-10">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
