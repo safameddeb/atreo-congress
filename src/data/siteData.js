@@ -384,7 +384,7 @@ export const presidentWelcome = {
   image: presidentPhoto,
   message: [
         "Dear colleagues, dear friends,",
-    "It is with great pleasure that we welcome you to the ATREO Congress, held on June 13–14 in Hammamet, in collaboration with the European Orthodontic Society (EOS).",
+    "It is with great pleasure that we welcome you to the ATREO Congress, held on June 13–14 in Hammamet, in collaboration with the Emirates Orthodontic Society (EOS).",
     "This scientific event will provide a valuable opportunity for exchange, sharing of experiences, and enrichment around the latest advances in orthodontics.",
     "We are honored to bring together renowned speakers and a committed community driven by a passion for our discipline.",
     "Beyond the scientific sessions, this congress is also intended to be a moment of conviviality and meaningful encounters.",
