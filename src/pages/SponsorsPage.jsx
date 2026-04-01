@@ -11,6 +11,13 @@ export default function SponsorsPage() {
           description="We are proud to partner with leading companies and organizations supporting the 11th ATREO Congress."
         />
 
+
+
+
+
+
+
+
         <div className="mt-12 space-y-14">
           {sponsorGroups.map((group) => (
             <section key={group.tier} className="space-y-6">

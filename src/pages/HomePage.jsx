@@ -36,13 +36,8 @@ export default function HomePage() {
             <h1 className="mt-6 text-balance text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
               {congress.title}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-white/85 sm:text-xl">
-
-
-
-//////////
-
-
+            <p className="mt-5 max-w-xl text-lg leading-8 text-white/85 sm:text-l">
+              Join a premium congress experience in a seaside destination atmosphere.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/register" className="btn-primary">
@@ -160,29 +155,27 @@ export default function HomePage() {
 
 
 
-<section className="section-shell space-y-10">
+      <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
 
         </div>
-<div className="flex justify-center">
-  {imageSpeakers.map((speaker) => (
-    <Speakerimg key={speaker.name + speaker.role} speaker={speaker} />
-  ))}
-</div>
+        <div className="flex justify-center">
+          {imageSpeakers.map((speaker) => (
+            <Speakerimg key={speaker.name + speaker.role} speaker={speaker} />
+          ))}
+        </div>
 
-<div className="flex justify-center mt-8">
-  <Link
-    to="/speakers"
-    className="rounded-full bg-yellow-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-yellow-600"
-  >
-    See all
-  </Link>
-</div>
+        <div className="flex justify-center mt-8">
+          <Link
+            to="/speakers"
+            className="rounded-full bg-yellow-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-yellow-600"
+          >
+            See all
+          </Link>
+        </div>
 
-</section>
-
-
+      </section>
 
 
 
@@ -193,7 +186,9 @@ export default function HomePage() {
 
 
 
-{/*
+
+
+      {/*
 
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
@@ -258,29 +253,29 @@ export default function HomePage() {
 
 
 
-<section className="section-shell space-y-10">
+      <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Gala" title=" Diner Gala: 13 june 2026 - 20H " />
 
         </div>
-<div className="flex justify-center">
-  {dinnerGala.map((gala) => (
-    <Dinnergala key={gala.name + gala.role} gala={gala} />
-  ))}
-</div>
-</section>
+        <div className="flex justify-center">
+          {dinnerGala.map((gala) => (
+            <Dinnergala key={gala.name + gala.role} gala={gala} />
+          ))}
+        </div>
+      </section>
 
 
-<section className="section-shell space-y-10">
+      <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Accomodation" title="Registration and Accomodation" />
         </div>
-<div className="flex justify-center">
-  {tarifCongress.map((accomodation) => (
-    <AccomodationRegistration key={accomodation.name + accomodation.role} accomodation={accomodation} />
-  ))}
-</div>
-</section>
+        <div className="flex justify-center">
+          {tarifCongress.map((accomodation) => (
+            <AccomodationRegistration key={accomodation.name + accomodation.role} accomodation={accomodation} />
+          ))}
+        </div>
+      </section>
 
       <section className="section-shell">
         <div className="mx-auto max-w-3xl">
