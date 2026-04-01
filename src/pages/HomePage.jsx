@@ -37,11 +37,10 @@ export default function HomePage() {
               {congress.title}
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-white/85 sm:text-xl">
-/////////////
 
 
 
-
+//////////
 
 
             </p>
@@ -213,7 +212,7 @@ export default function HomePage() {
         </div>
       </section>
  */}
- 
+
       <section className="section-shell">
         <div className="marble-bg glass-card p-6 sm:p-10">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">

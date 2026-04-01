@@ -43,6 +43,7 @@ import dentamed from "../assets/sponsors/dentamed.png";
 import zeidoun from "../assets/sponsors/zeidoun.png";
 import zeidoun2 from "../assets/sponsors/zeidoun2.png";
 import handsom from "../assets/sponsors/handsom.png";
+import mot from "../assets/sponsors/mot.jpg";
 import mdc from "../assets/sponsors/mdc.jpg";
 import ourspeakers from "../assets/ourspeakers.jpg";
 import advanced from "../assets/sponsors/advanced.png";
@@ -475,6 +476,7 @@ export const sponsorGroups = [
       { name: "advanced", image: advanced },
       { name: "Express Medical", image: expressMedical },
       { name: "alignright", image: alignright },
+       { name: "mot", image: mot },
 
     ],
   },
