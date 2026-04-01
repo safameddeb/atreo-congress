@@ -16,6 +16,7 @@ import {
   sponsorsPreview,
   presidentWelcome,
   presidentcongressWelcome,
+  copresidentcongressWelcome,
 
 } from "../data/siteData";
 
@@ -36,7 +37,7 @@ export default function HomePage() {
             <h1 className="mt-6 text-balance text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
               {congress.title}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-white/85 sm:text-l">
+            <p className="mt-5 max-w-xl text-lg leading-8 text-white/85 sm:text-">
               Join a premium congress experience in a seaside destination atmosphere.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -101,6 +102,44 @@ export default function HomePage() {
               <div className="rounded-[1.75rem] border border-slate-200 bg-white/85 p-6 shadow-sm sm:p-8">
                 <div className="space-y-5 text-[15px] leading-8 text-slate-700 sm:text-base">
                   {presidentWelcome.message.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section className="section-shell">
+        <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <img
+                src={copresidentcongressWelcome.image}
+                alt={copresidentcongressWelcome.name}
+                className="h-64 w-64 rounded-[2rem] object-cover border-4 border-white shadow-2xl sm:h-72 sm:w-72 lg:h-[340px] lg:w-[300px]"
+              />
+
+              <div className="mt-5">
+                <p className="text-2xl font-bold text-[var(--navy)] sm:text-3xl">
+                  {copresidentcongressWelcome.name}
+                </p>
+                <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
+                  Co-President of the Congress
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              <SectionHeader
+                eyebrow={copresidentcongressWelcome.role}
+                title={copresidentcongressWelcome.title}
+              />
+
+              <div className="rounded-[1.75rem] border border-slate-200 bg-white/85 p-6 shadow-sm sm:p-8">
+                <div className="space-y-5 text-[15px] leading-8 text-slate-700 sm:text-base">
+                  {copresidentcongressWelcome.message.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}
                 </div>

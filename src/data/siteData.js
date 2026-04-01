@@ -49,6 +49,7 @@ import ourspeakers from "../assets/ourspeakers.jpg";
 import advanced from "../assets/sponsors/advanced.png";
 import gala from "../assets/gala.png";
 import tarif from "../assets/tarif.png";
+import medchalabi from "../assets/medchalabi.jpeg";
 
 
 
@@ -93,7 +94,7 @@ export const tarifCongress = [
 ]
 
 export const keynoteSpeakers = [
- {
+  {
     name: "Dr. Abdelhakim Elgheriani",
     nationality: "United Arab Emirates",
     flag: "🇦🇪",
@@ -117,7 +118,7 @@ export const keynoteSpeakers = [
     flag: "🇮🇹",
     image: vittorio,
   },
-    {
+  {
     name: "Dr. María Hernández Vilarrasa",
     nationality: "Spain",
     flag: "🇪🇸",
@@ -239,7 +240,7 @@ export const speakers = [
     flag: "🇮🇹",
     image: vittorio,
   },
-    {
+  {
     name: "Dr. María Hernández Vilarrasa",
     nationality: "Spain",
     flag: "🇪🇸",
@@ -365,7 +366,7 @@ export const sponsorTiers = [
     description:
       "Premium visibility on the congress website, key sponsor placements, and stage mention.",
   },
-    {
+  {
     name: "Bronze",
     description:
       "Logo presence across event materials and the official congress sponsor area.",
@@ -398,16 +399,16 @@ export const registerFields = [
       { value: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence" },
     ],
   },
-{
-  name: "payment",
-  label: "Select Payment Method",
-  type: "select",
-  required: true,
-  options: [
-    { value: "Cash (same day)", label: "Cash (same day)" },
-    { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
-  ],
-}
+  {
+    name: "payment",
+    label: "Select Payment Method",
+    type: "select",
+    required: true,
+    options: [
+      { value: "Cash (same day)", label: "Cash (same day)" },
+      { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
+    ],
+  }
 ];
 export const presidentWelcome = {
   role: "ATREO President’s Message",
@@ -415,7 +416,7 @@ export const presidentWelcome = {
   title: "Welcome to the 11th ATREO Congress",
   image: presidentPhoto,
   message: [
-        "Dear colleagues, dear friends,",
+    "Dear colleagues, dear friends,",
     "It is with great pleasure that we welcome you to the ATREO Congress, held on June 13–14 in Hammamet, in collaboration with the Emirates Orthodontic Society (EOS).",
     "This scientific event will provide a valuable opportunity for exchange, sharing of experiences, and enrichment around the latest advances in orthodontics.",
     "We are honored to bring together renowned speakers and a committed community driven by a passion for our discipline.",
@@ -434,15 +435,15 @@ export const presidentcongressWelcome = {
   image: yamen,
   message: [
 
-"In recent years, orthodontics has undergone a remarkable transformation, driven by significant clinical and technological advancements.",
+    "In recent years, orthodontics has undergone a remarkable transformation, driven by significant clinical and technological advancements.",
 
-"These developments are the result of years of clinical research and technical innovation, led by talented clinicians whose creativity and ingenuity continue to push the boundaries of conventional orthodontics.",
+    "These developments are the result of years of clinical research and technical innovation, led by talented clinicians whose creativity and ingenuity continue to push the boundaries of conventional orthodontics.",
 
-"We invite you to join us in celebrating these achievements and the evolution of our specialty at the ATREO Annual Congress. We will have the pleasure of welcoming a distinguished panel of speakers, eager to share their clinical expertise and experience.",
+    "We invite you to join us in celebrating these achievements and the evolution of our specialty at the ATREO Annual Congress. We will have the pleasure of welcoming a distinguished panel of speakers, eager to share their clinical expertise and experience.",
 
-"This event will also be a wonderful opportunity to strengthen the Tunisian–Emirati friendship in an exceptional setting.",
+    "This event will also be a wonderful opportunity to strengthen the Tunisian–Emirati friendship in an exceptional setting.",
 
-"We look forward to seeing you on June 13th and 14th for two days of exchange and knowledge sharing.",
+    "We look forward to seeing you on June 13th and 14th for two days of exchange and knowledge sharing.",
 
 
 
@@ -451,6 +452,25 @@ export const presidentcongressWelcome = {
 };
 
 
+export const copresidentcongressWelcome = {
+  role: "Congress Co-President’s Message",
+  name: "Dr Mohammed Mahmoud Al Shalabi",
+  title: "Welcome to the 11th ATREO Congress",
+  image: medchalabi,
+  message: [
+    "Dear colleagues, dear friends,",
+
+    "It is a great honor and pleasure to welcome you to the 11th ATREO Congress in Hammamet. As Co-President of this meeting, I am particularly proud of the collaboration between the Emirates Orthodontic Society (EOS) and the Tunisian Association for Research and Studies in Orthodontics (ATREO) , working together to host this important scientific event.",
+
+    "This partnership reflects the strong professional ties within our orthodontic community and our shared commitment to advancing knowledge, fostering collaboration, and supporting excellence in orthodontic care. In collaboration with the Emirates Orthodontic Society , this congress brings together distinguished speakers and colleagues to discuss the latest developments and innovations in our field.",
+
+    "Beyond the scientific sessions, we hope this meeting will also create opportunities for meaningful dialogue, new friendships, and lasting professional connections.",
+
+    "I wish you all a successful and inspiring congress and a pleasant stay in beautiful Hammamet.",
+
+
+  ],
+};
 
 
 
@@ -476,7 +496,7 @@ export const sponsorGroups = [
       { name: "advanced", image: advanced },
       { name: "Express Medical", image: expressMedical },
       { name: "alignright", image: alignright },
-       { name: "mot", image: mot },
+      { name: "mot", image: mot },
 
     ],
   },
