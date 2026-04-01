@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import SpeakerCard from "../components/SpeakerCard";
 import Speakerimg from "../components/imagespeaker";
+import Dinnergala from "../components/DinnerGala";
+import AccomodationRegistration from "../components/Accomodation";
 
 import {
   congress,
   imageSpeakers,
+  dinnerGala,
+  tarifCongress,
   keynoteSpeakers,
   programmeDays,
   sponsorTiers,
@@ -33,9 +37,13 @@ export default function HomePage() {
               {congress.title}
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-white/85 sm:text-xl">
-              Join a premium congress experience inspired by the presentation: a
-              clean scientific look, a seaside destination mood, and a strong
-              call-to-action for registration.
+/////////////
+
+
+
+
+
+
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/register" className="btn-primary">
@@ -173,7 +181,9 @@ export default function HomePage() {
   </Link>
 </div>
 
-      </section>
+</section>
+
+
 
 
 
@@ -203,6 +213,7 @@ export default function HomePage() {
         </div>
       </section>
  */}
+ 
       <section className="section-shell">
         <div className="marble-bg glass-card p-6 sm:p-10">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -245,6 +256,32 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
+
+<section className="section-shell space-y-10">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeader eyebrow="Gala" title=" Diner Gala: 13 june 2026 - 20H " />
+
+        </div>
+<div className="flex justify-center">
+  {dinnerGala.map((gala) => (
+    <Dinnergala key={gala.name + gala.role} gala={gala} />
+  ))}
+</div>
+</section>
+
+
+<section className="section-shell space-y-10">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeader eyebrow="Accomodation" title="Registration and Accomodation" />
+        </div>
+<div className="flex justify-center">
+  {tarifCongress.map((accomodation) => (
+    <AccomodationRegistration key={accomodation.name + accomodation.role} accomodation={accomodation} />
+  ))}
+</div>
+</section>
 
       <section className="section-shell">
         <div className="mx-auto max-w-3xl">

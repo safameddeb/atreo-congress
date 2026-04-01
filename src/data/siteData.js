@@ -16,7 +16,7 @@ import ilyes from "../assets/ILYES TIBAOUI.png";
 import jean from "../assets/jean.png";
 import khaled from "../assets/khaled.png";
 import mulhim from "../assets/mulhim duirieh.jpeg";
-import rafika from "../assets/RAFIKA HARMIM.jpeg";
+import rafika from "../assets/RAFIKA HARMIM.jpg";
 import ramzi from "../assets/RAMZI HADDED.png";
 import lisette from "../assets/lisette.jpg";
 import maria from "../assets/maria.jpg";
@@ -45,6 +45,10 @@ import zeidoun2 from "../assets/sponsors/zeidoun2.png";
 import handsom from "../assets/sponsors/handsom.png";
 import mdc from "../assets/sponsors/mdc.jpg";
 import ourspeakers from "../assets/ourspeakers.jpg";
+import advanced from "../assets/sponsors/advanced.png";
+import gala from "../assets/gala.png";
+import tarif from "../assets/tarif.png";
+
 
 
 
@@ -71,6 +75,19 @@ export const imageSpeakers = [
   {
 
     image: ourspeakers,
+  },
+]
+
+export const dinnerGala = [
+  {
+
+    image: gala,
+  },
+]
+
+export const tarifCongress = [
+  {
+    image: tarif,
   },
 ]
 
@@ -371,11 +388,25 @@ export const registerFields = [
   { name: "country", label: "Country", type: "text", required: true },
   { name: "city", label: "City", type: "text", required: true },
   {
-    name: "message",
-    label: "Message (optional)",
-    type: "textarea",
+    name: "workshop",
+    label: "Select Workshop",
+    type: "select",
     required: false,
+    options: [
+      { value: "Dr. Lisette Rodriguez: Workshop GRAPHY", label: "Dr. Lisette Rodriguez: Workshop GRAPHY" },
+      { value: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence" },
+    ],
   },
+{
+  name: "payment",
+  label: "Select Payment Method",
+  type: "select",
+  required: true,
+  options: [
+    { value: "Cash (same day)", label: "Cash (same day)" },
+    { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
+  ],
+}
 ];
 export const presidentWelcome = {
   role: "ATREO President’s Message",
@@ -441,6 +472,7 @@ export const sponsorGroups = [
       { name: "Nagati", image: nagati },
       { name: "zeidoun", image: zeidoun },
       { name: "zeidoun2", image: zeidoun2 },
+      { name: "advanced", image: advanced },
       { name: "Express Medical", image: expressMedical },
       { name: "alignright", image: alignright },
 
