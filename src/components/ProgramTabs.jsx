@@ -1,3 +1,4 @@
+{/* //// voici mon code du component ProgramTabs.jsx 
 import { useState } from 'react';
 import { programmeDays } from '../data/siteData';
 
@@ -49,3 +50,38 @@ export default function ProgramTabs() {
     </div>
   );
 }
+*/}
+import { programmeDays } from '../data/siteData';
+
+export default function ProgramTabs() {
+  return (
+    <div className="space-y-12">
+      {programmeDays.map((day) => (
+        <div key={day.id} className="space-y-6">
+          
+          {/* Title */}
+          <h3 className="text-center text-2xl sm:text-3xl font-bold text-[var(--navy)]">
+            {day.label}
+          </h3>
+
+          {/* Ligne dorée (option premium) */}
+          <div className="w-24 h-[2px] bg-[var(--gold)] mx-auto"></div>
+
+          {/* Image */}
+          <div className="glass-card overflow-hidden p-4 sm:p-6">
+            <img
+              src={day.image}
+              alt={`Congress program for ${day.label}`}
+              className="table-shadow mx-auto w-full max-w-4xl rounded-[1.5rem] border border-slate-200 bg-white"
+            />
+          </div>
+
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+
+

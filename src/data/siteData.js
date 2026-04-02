@@ -1,8 +1,8 @@
 import beach from "../assets/beach.jpg";
 import poster from "../assets/poster.png";
 import speakerWall from "../assets/speaker-wall.jpg";
-import programDay1 from "../assets/program-day-1.png";
-import programDay2 from "../assets/program-day-2.png";
+import programDay1 from "../assets/program-day-1.jpg";
+import programDay2 from "../assets/program-day-2.jpg";
 import sponsorsBoard from "../assets/sponsors-board.png";
 import logos from "../assets/atreo-eos-logos.jpg";
 import patrice from "../assets/patrice.jpg";
@@ -50,7 +50,18 @@ import advanced from "../assets/sponsors/advanced.png";
 import gala from "../assets/gala.png";
 import tarif from "../assets/tarif.png";
 import medchalabi from "../assets/medchalabi.jpeg";
-
+import tunisie from "../assets/flags/tunisia.png";
+import algerie from "../assets/flags/algerie.png";
+import egypt from "../assets/flags/egypt.png";
+import emirates from "../assets/flags/emirates.png";
+import france from "../assets/flags/france.png";
+import italy from "../assets/flags/italy.png";
+import lebanon from "../assets/flags/lebanon.png";
+import mexico from "../assets/flags/mexico.png";
+import spain from "../assets/flags/spain.png";
+import suisse from "../assets/flags/suisse.png";
+import syria from "../assets/flags/syria.png";
+import marroc from "../assets/flags/marroc.png";
 
 
 
@@ -94,6 +105,8 @@ export const tarifCongress = [
 ]
 
 export const keynoteSpeakers = [
+
+
   {
     name: "Dr. Abdelhakim Elgheriani",
     nationality: "United Arab Emirates",
@@ -112,242 +125,147 @@ export const keynoteSpeakers = [
     flag: "🇸🇾",
     image: mulhim,
   },
-  {
-    name: "Dr. Vittorio Cacciafesta",
-    nationality: "Italy",
-    flag: "🇮🇹",
-    image: vittorio,
-  },
-  {
-    name: "Dr. María Hernández Vilarrasa",
-    nationality: "Spain",
-    flag: "🇪🇸",
-    image: maria,
-  },
-  {
-    name: "Dr. Fethi Jebri",
-    nationality: "Tunisia",
-    flag: "🇹🇳",
-    image: fethi,
-  },
-  {
-    name: "Dr. Ramzi Hadded",
-    nationality: "Lebanon",
-    flag: "🇱🇧",
-    image: ramzi,
-  },
-  {
-    name: "Dr. Ilyes Tibaoui",
-    nationality: "Algeria",
-    flag: "🇩🇿",
-    image: ilyes,
-  },
-  {
-    name: "Dr. Skandar Ellouze",
-    nationality: "Tunisia",
-    flag: "🇹🇳",
-    image: skandar,
-  },
-  {
-    name: "Dr. Ignacio Arcos Palomino",
-    nationality: "Spain",
-    flag: "🇪🇸",
-    image: ignacio,
-  },
-  {
-    name: "Dr. Jean-François Ernoult",
-    nationality: "France",
-    flag: "🇫🇷",
-    image: jean,
-  },
-  {
-    name: "Dr. Khaled Aboulazm",
-    nationality: "Egypt",
-    flag: "🇪🇬",
-    image: khaled,
-  },
-  {
-    name: "Dr. Lisette Rodrigues",
-    nationality: "Spain",
-    flag: "🇪🇸",
-    image: lisette,
-  },
-  {
-    name: "Dr. Rafika Harmim",
-    nationality: "Algeria",
-    flag: "🇩🇿",
-    image: rafika,
-  },
-  {
-    name: "Dr. Salvador Romero",
-    nationality: "Mexico",
-    flag: "🇲🇽",
-    image: salvadorromero,
-  },
-  {
-    name: "Dr. Zouhair Abidine",
-    nationality: "Morocco",
-    flag: "🇲🇦",
-    image: zouhair_abidine,
-  },
-  {
-    name: "Dr. Ambra Michelotti",
-    nationality: "Italy",
-    flag: "🇮🇹",
-    image: ambre,
-  },
-  {
-    name: "Dr. Romain Radjei",
-    nationality: "France",
-    flag: "🇫🇷",
-    image: romain,
-  },
-  {
-    name: "Dr. Patrice Bergeyron",
-    nationality: "Switzerland",
-    flag: "🇨🇭",
-    image: patrice,
-  },
-  {
-    name: "Dr. Zouhair Meskini",
-    nationality: "Tunisia",
-    flag: "🇹🇳",
-    image: zouhair_meskini,
-  },
+
 ];
+
 export const speakers = [
+  
   {
     name: "Dr. Abdelhakim Elgheriani",
     nationality: "United Arab Emirates",
-    flag: "🇦🇪",
+    flag: emirates,
     image: abdelhakim,
   },
   {
     name: "Dr. Yamen Labidi",
     nationality: "Tunisia",
-    flag: "🇹🇳",
+    flag: tunisie,
     image: yamen,
   },
   {
     name: "Dr. Mulhem Dumirieh",
     nationality: "Syria",
-    flag: "🇸🇾",
+    flag: syria,
     image: mulhim,
   },
   {
     name: "Dr. Vittorio Cacciafesta",
     nationality: "Italy",
-    flag: "🇮🇹",
+    flag: italy,
     image: vittorio,
   },
   {
     name: "Dr. María Hernández Vilarrasa",
     nationality: "Spain",
-    flag: "🇪🇸",
+    flag: spain,
     image: maria,
   },
   {
     name: "Dr. Fethi Jebri",
     nationality: "Tunisia",
-    flag: "🇹🇳",
+    flag: tunisie,
     image: fethi,
   },
   {
     name: "Dr. Ramzi Hadded",
     nationality: "Lebanon",
-    flag: "🇱🇧",
+    flag: lebanon,
     image: ramzi,
   },
   {
     name: "Dr. Ilyes Tibaoui",
     nationality: "Algeria",
-    flag: "🇩🇿",
+    flag: algerie,
     image: ilyes,
   },
   {
     name: "Dr. Skandar Ellouze",
     nationality: "Tunisia",
-    flag: "🇹🇳",
+    flag: tunisie,
     image: skandar,
   },
   {
     name: "Dr. Ignacio Arcos Palomino",
     nationality: "Spain",
-    flag: "🇪🇸",
+    flag: spain,
     image: ignacio,
   },
   {
     name: "Dr. Jean-François Ernoult",
-    nationality: "France",
-    flag: "🇫🇷",
+    nationality: france,
+    flag: france,
     image: jean,
   },
   {
     name: "Dr. Khaled Aboulazm",
     nationality: "Egypt",
-    flag: "🇪🇬",
+    flag: egypt,
     image: khaled,
   },
   {
     name: "Dr. Lisette Rodrigues",
     nationality: "Spain",
-    flag: "🇪🇸",
+    flag: spain,
     image: lisette,
   },
   {
     name: "Dr. Rafika Harmim",
     nationality: "Algeria",
-    flag: "🇩🇿",
+    flag: algerie,
     image: rafika,
   },
   {
     name: "Dr. Salvador Romero",
     nationality: "Mexico",
-    flag: "🇲🇽",
+    flag: mexico,
     image: salvadorromero,
   },
   {
     name: "Dr. Zouhair Abidine",
     nationality: "Morocco",
-    flag: "🇲🇦",
+    flag: marroc,
     image: zouhair_abidine,
   },
   {
     name: "Dr. Ambra Michelotti",
     nationality: "Italy",
-    flag: "🇮🇹",
+    flag: italy,
     image: ambre,
   },
   {
     name: "Dr. Romain Radjei",
     nationality: "France",
-    flag: "🇫🇷",
+    flag: france,
     image: romain,
   },
   {
     name: "Dr. Patrice Bergeyron",
     nationality: "Switzerland",
-    flag: "🇨🇭",
+    flag: suisse,
     image: patrice,
   },
   {
     name: "Dr. Zouhair Meskini",
     nationality: "Tunisia",
-    flag: "🇹🇳",
+    flag: tunisie,
     image: zouhair_meskini,
   },
 ];
+
+
+/// voici la partie dans sitedata.js
 export const programmeDays = [
   {
     id: "day-1",
     label: "Saturday 13 June",
     image: programDay1,
     highlights: [
-      "Workshop and opening session",
-      "Coffee breaks and lunch break",
+      "Graphy workshop & opening session",
+      "Advanced biomechanics, surgery & skeletal anchorage",
       "Clinical lectures and biomechanics topics",
     ],
   },
+
   {
     id: "day-2",
     label: "Sunday 14 June",
@@ -453,7 +371,7 @@ export const presidentcongressWelcome = {
 
 
 export const copresidentcongressWelcome = {
-  role: "Congress Co-President’s Message",
+  role: "EOS President’s Message",
   name: "Dr Mohammed Mahmoud Al Shalabi",
   title: "Welcome to the 11th ATREO Congress",
   image: medchalabi,

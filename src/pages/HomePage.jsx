@@ -88,7 +88,7 @@ export default function HomePage() {
                   {presidentWelcome.name}
                 </p>
                 <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
-                  President of the ATREO
+                  President of ATREO
                 </p>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-<section className="section-shell">
+      <section className="section-shell">
         <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -126,7 +126,7 @@ export default function HomePage() {
                   {copresidentcongressWelcome.name}
                 </p>
                 <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
-                  Co-President of the Congress
+President of EOS
                 </p>
               </div>
             </div>
@@ -166,7 +166,7 @@ export default function HomePage() {
                   {presidentcongressWelcome.name}
                 </p>
                 <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
-                  President of the Congress
+                  Congress President
                 </p>
               </div>
             </div>
@@ -217,18 +217,7 @@ export default function HomePage() {
       </section>
 
 
-
-
-
-
-
-
-
-
-
-
-      {/*
-
+{/* 
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
@@ -245,7 +234,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
- */}
+*/}
 
       <section className="section-shell">
         <div className="marble-bg glass-card p-6 sm:p-10">

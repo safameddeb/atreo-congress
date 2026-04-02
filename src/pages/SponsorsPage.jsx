@@ -3,22 +3,19 @@ import { sponsorGroups } from "../data/siteData";
 
 export default function SponsorsPage() {
   return (
-    <div className="pb-8">
+    <div>
+      <section className="bg-[#c9d2db] py-16 sm:py-20">
+        <div className="section-shell">
+          <SectionHeader
+            eyebrow="Partners"
+            title="Our Sponsors"
+            align="center"
+          />
+        </div>
+      </section>
+
       <section className="section-shell py-16 sm:py-20">
-        <SectionHeader
-          eyebrow="Partners"
-          title="Our Sponsors"
-          description="We are proud to partner with leading companies and organizations supporting the 11th ATREO Congress."
-        />
-
-
-
-
-
-
-
-
-        <div className="mt-12 space-y-14">
+        <div className="space-y-14">
           {sponsorGroups.map((group) => (
             <section key={group.tier} className="space-y-6">
               <div className="text-center">
