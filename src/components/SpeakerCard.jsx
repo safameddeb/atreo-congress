@@ -3,9 +3,12 @@ export default function SpeakerCard({ speaker }) {
   return (
     <article className="relative overflow-hidden rounded-[28px] border-4 border-[#dff0df] bg-[#002c84] shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
       <div className="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white text-2xl shadow-md">
-        <span aria-label={speaker.nationality} title={speaker.nationality}>
-          {speaker.flag}
-        </span>
+        <img
+          src={speaker.flag}
+          alt={speaker.nationality}
+          title={speaker.nationality}
+          className="w-6 h-4 object-cover rounded-sm"
+        />
       </div>
 
       <div className="aspect-[4/4.2] overflow-hidden">
