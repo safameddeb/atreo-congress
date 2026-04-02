@@ -309,7 +309,7 @@ export const registerFields = [
   { name: "city", label: "City", type: "text", required: true },
   {
     name: "workshop",
-    label: "Select Workshop",
+    label: "Select Workshop (Optional)",
     type: "select",
     required: false,
     options: [
