@@ -12,6 +12,7 @@ const initialForm = {
   city: "",
   workshop: "",
   payment: "",
+  size: "",
 };
 
 export default function RegisterForm() {
@@ -43,6 +44,7 @@ const handleSubmit = async (event) => {
         city: form.city,
         workshop: form.workshop,
         payment: form.payment,
+        size: form.size,
       },
       { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
     );

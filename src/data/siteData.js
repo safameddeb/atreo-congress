@@ -129,7 +129,7 @@ export const keynoteSpeakers = [
 ];
 
 export const speakers = [
-  
+
   {
     name: "Dr. Abdelhakim Elgheriani",
     nationality: "United Arab Emirates",
@@ -285,7 +285,7 @@ export const sponsorTiers = [
       "Premium visibility on the congress website, key sponsor placements, and stage mention.",
   },
   {
-    name: "Bronze",
+    name: "Platinum",
     description:
       "Logo presence across event materials and the official congress sponsor area.",
   },
@@ -325,6 +325,18 @@ export const registerFields = [
     options: [
       { value: "Cash (same day)", label: "Cash (same day)" },
       { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
+    ],
+  },
+  {
+    name: "size",
+    label: "Select T-shirt size",
+    type: "select",
+    required: true,
+    options: [
+      { value: "S (Small)", label: "S (Small)" },
+      { value: "M (Medium)", label: "M (Medium)" },
+      { value: "L (Large)", label: "L (Large)" },
+      { value: "XL (Extra large)", label: "XL (Extra large)"},
     ],
   }
 ];
@@ -405,7 +417,7 @@ export const sponsorGroups = [
     ],
   },
   {
-    tier: "Bronze Sponsors",
+    tier: "Platinum Sponsors",
     logos: [
       { name: "orthopartner", image: orthopartner },
       { name: "Nagati", image: nagati },
