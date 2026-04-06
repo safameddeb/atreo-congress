@@ -27,6 +27,7 @@ import zouhair_abidine from "../assets/ZOUHAIR ABIDINE.png";
 import zouhair_meskini from "../assets/zouhair meskini.png";
 import presidentPhoto from "../assets/president.jpg";
 import angelAligner from "../assets/sponsors/angel aligner.png";
+import sponsorimg from "../assets/sponsors/sponsorimg.jpg";
 
 import diamond from "../assets/sponsors/diamond.png";
 import expressMedical from "../assets/sponsors/express medical.png";
@@ -88,6 +89,12 @@ export const imageSpeakers = [
   {
 
     image: ourspeakers,
+  },
+]
+export const imageSponsor = [
+  {
+
+    image: sponsorimg,
   },
 ]
 
@@ -192,7 +199,7 @@ export const speakers = [
   },
   {
     name: "Dr. Jean-François Ernoult",
-    nationality: france,
+    nationality: "France",
     flag: france,
     image: jean,
   },
@@ -423,7 +430,6 @@ export const sponsorGroups = [
       { name: "Nagati", image: nagati },
       { name: "zeidoun", image: zeidoun },
       { name: "zeidoun2", image: zeidoun2 },
-      { name: "advanced", image: advanced },
       { name: "Express Medical", image: expressMedical },
       { name: "alignright", image: alignright },
       { name: "mot", image: mot },
@@ -439,6 +445,8 @@ export const sponsorGroups = [
       { name: "meduse", image: meduse },
       { name: "newmedplus", image: newmedplus },
       { name: "dentamed", image: dentamed },
+      { name: "advanced", image: advanced },
+
 
 
 

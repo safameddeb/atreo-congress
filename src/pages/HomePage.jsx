@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import SpeakerCard from "../components/SpeakerCard";
 import Speakerimg from "../components/imagespeaker";
+import Sponsorimg from "../components/ImageSponsors";
 import Dinnergala from "../components/DinnerGala";
 import AccomodationRegistration from "../components/Accomodation";
 
 import {
   congress,
   imageSpeakers,
+  imageSponsor,
   dinnerGala,
   tarifCongress,
   keynoteSpeakers,
@@ -217,6 +219,49 @@ President of EOS
       </section>
 
 
+
+<section className="section-shell space-y-10">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeader eyebrow="Sponsors" title="Our Sponsors" />
+        </div>
+        <div className="flex justify-center">
+          {imageSponsor.map((sponsor) => (
+            <Sponsorimg key={sponsor.name + sponsor.role} sponsor={sponsor} />
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-8">
+            <Link to="/sponsors" className="btn-primary mt-8">
+              Full list of sponsors
+            </Link>
+        </div>
+
+      </section>
+
+
+
+ <section className="section-shell">
+        <div className="mx-auto max-w-3xl">
+          <div className="space-y-6 text-center">
+            <SectionHeader eyebrow="Sponsors" title="Our Sponsors" />
+            <div className="grid gap-4">
+              {sponsorTiers.map((tier) => (
+                <div key={tier.name} className="glass-card p-5 text-center">
+                  <p className="text-lg font-bold text-[var(--navy)]">
+                    {tier.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <Link to="/sponsors" className="btn-primary mt-8">
+              Full list of sponsors
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+
 {/* 
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
@@ -305,25 +350,7 @@ President of EOS
         </div>
       </section>
 
-      <section className="section-shell">
-        <div className="mx-auto max-w-3xl">
-          <div className="space-y-6 text-center">
-            <SectionHeader eyebrow="Sponsors" title="Our Sponsors" />
-            <div className="grid gap-4">
-              {sponsorTiers.map((tier) => (
-                <div key={tier.name} className="glass-card p-5 text-center">
-                  <p className="text-lg font-bold text-[var(--navy)]">
-                    {tier.name}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <Link to="/sponsors" className="btn-primary mt-8">
-              Full list of sponsors
-            </Link>
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 }
