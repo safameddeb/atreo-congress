@@ -29,6 +29,7 @@ import presidentPhoto from "../assets/president.jpg";
 import angelAligner from "../assets/sponsors/angel aligner.png";
 import sponsorimg from "../assets/sponsors/sponsorimg.jpg";
 
+import stoderma from "../assets/sponsors/stoderma.jpg";
 import diamond from "../assets/sponsors/diamond.png";
 import expressMedical from "../assets/sponsors/express medical.png";
 import gum from "../assets/sponsors/gum.jpeg";
@@ -446,10 +447,7 @@ export const sponsorGroups = [
       { name: "newmedplus", image: newmedplus },
       { name: "dentamed", image: dentamed },
       { name: "advanced", image: advanced },
-
-
-
-
+      { name: "stoderma", image: stoderma },
 
     ],
   },

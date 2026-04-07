@@ -75,6 +75,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
       <section className="section-shell">
         <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
@@ -128,7 +130,7 @@ export default function HomePage() {
                   {copresidentcongressWelcome.name}
                 </p>
                 <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
-President of EOS
+                  President of EOS
                 </p>
               </div>
             </div>
@@ -220,7 +222,7 @@ President of EOS
 
 
 
-<section className="section-shell space-y-10">
+      <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Sponsors" title="Our Sponsors" />
         </div>
@@ -231,16 +233,16 @@ President of EOS
         </div>
 
         <div className="flex justify-center mt-8">
-            <Link to="/sponsors" className="btn-primary mt-8">
-              Full list of sponsors
-            </Link>
+          <Link to="/sponsors" className="btn-primary mt-8">
+            Full list of sponsors
+          </Link>
         </div>
 
       </section>
 
 
 
-{/* 
+      {/* 
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
@@ -328,7 +330,7 @@ President of EOS
         </div>
       </section>
 
-     
+
     </div>
   );
 }
