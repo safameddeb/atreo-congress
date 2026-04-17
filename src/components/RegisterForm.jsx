@@ -1,7 +1,6 @@
-import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { registerFields } from "../data/siteData";
-
+import { useState, useRef, useEffect } from "react";
 const initialForm = {
   firstName: "",
   lastName: "",
@@ -10,20 +9,59 @@ const initialForm = {
   speciality: "",
   country: "",
   city: "",
-  workshop: "",
+  workshop: [], // ✅ au lieu de ""
   payment: "",
   size: "",
+  showWorkshop: false, // ✅ AJOUT OBLIGATOIRE
 };
 
 export default function RegisterForm() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
+const dropdownRef = useRef(null);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target)
+    ) {
+      setForm((prev) => ({
+        ...prev,
+        showWorkshop: false,
+      }));
+    }
   };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
+
+
+
+const handleChange = (event) => {
+  const { name, value, options, multiple } = event.target;
+
+  if (multiple) {
+    const selectedValues = Array.from(options)
+      .filter(option => option.selected)
+      .map(option => option.value);
+
+    // ✅ Limite à 2 workshops
+    if (selectedValues.length > 2) {
+      alert("You can select 1 or 2 workshops");
+      return;
+    }
+
+    setForm((current) => ({ ...current, [name]: selectedValues }));
+  } else {
+    setForm((current) => ({ ...current, [name]: value }));
+  }
+};
 
 const handleSubmit = async (event) => {
   event.preventDefault();
@@ -43,6 +81,7 @@ const handleSubmit = async (event) => {
         country: form.country,
         city: form.city,
         workshop: form.workshop,
+        showWorkshop: false, // ✅ AJOUTE ÇA
         payment: form.payment,
         size: form.size,
       },
@@ -115,21 +154,73 @@ const handleSubmit = async (event) => {
           )}
 */}
         </>
-      ) : field.type === "select" ? (
-        <select {...sharedProps}>
-          <option value="">-- Select your choice --</option>
-          {field.options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      ) : (
+) : field.name === "workshop" ? (
+  <div ref={dropdownRef} className="relative mt-2">
+    {/* Bouton principal */}
+    <button
+      type="button"
+      onClick={() =>
+        setForm((prev) => ({
+          ...prev,
+          showWorkshop: !prev.showWorkshop,
+        }))
+      }
+      className={sharedProps.className + " text-left"}
+    >
+      {form.workshop.length > 0
+        ? form.workshop.join(", ")
+        : "-- Select your choice --"}
+    </button>
+
+    {/* Dropdown */}
+    {form.showWorkshop && (
+      <div className="absolute z-10 mt-2 w-full rounded-xl border bg-white shadow-lg p-3">
+        {field.options.map((option) => (
+          <label key={option.value} className="flex items-center gap-2 py-1">
+            <input
+              type="checkbox"
+              checked={form.workshop.includes(option.value)}
+              onChange={() => {
+                let updated = [...form.workshop];
+
+                if (updated.includes(option.value)) {
+                  updated = updated.filter((v) => v !== option.value);
+                } else {
+                  if (updated.length >= 2) {
+                    alert("Maximum 2 workshops");
+                    return;
+                  }
+                  updated.push(option.value);
+                }
+
+                setForm((prev) => ({
+                  ...prev,
+                  workshop: updated,
+                }));
+              }}
+            />
+            <span>{option.label}</span>
+          </label>
+        ))}
+      </div>
+    )}
+  </div>
+) : field.type === "select" ? (
+  <select {...sharedProps}>
+    <option value="">-- Select your choice --</option>
+    {field.options.map((option) => (
+      <option key={option.value} value={option.value}>
+        {option.label}
+      </option>
+    ))}
+  </select>
+) : (
         <input {...sharedProps} type={field.type} />
       )}
     </label>
   );
 })}
+
 
         <div className="sm:col-span-2 flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
           <button

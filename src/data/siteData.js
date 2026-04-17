@@ -17,6 +17,7 @@ import jean from "../assets/jean.png";
 import khaled from "../assets/khaled.png";
 import mulhim from "../assets/mulhim duirieh.jpeg";
 import rafika from "../assets/RAFIKA HARMIM.jpg";
+import medsalah from "../assets/medsalah.jpg";
 import ramzi from "../assets/RAMZI HADDED.png";
 import lisette from "../assets/lisette.jpg";
 import maria from "../assets/maria.jpg";
@@ -258,10 +259,15 @@ export const speakers = [
     flag: tunisie,
     image: zouhair_meskini,
   },
+  {
+    name: "Dr. Mohammed Saleh",
+    nationality: "United Arab Emirates",
+    flag: emirates,
+    image: medsalah,
+  },
 ];
 
 
-/// voici la partie dans sitedata.js
 export const programmeDays = [
   {
     id: "day-1",
@@ -307,6 +313,7 @@ export const sponsorTiers = [
 
 export const sponsorsPreview = sponsorsBoard;
 
+
 export const registerFields = [
   { name: "firstName", label: "First name", type: "text", required: true },
   { name: "lastName", label: "Last name", type: "text", required: true },
@@ -315,21 +322,22 @@ export const registerFields = [
   { name: "speciality", label: "Speciality", type: "text", required: true },
   { name: "country", label: "Country", type: "text", required: true },
   { name: "city", label: "City", type: "text", required: true },
-  {
-    name: "workshop",
-    label: "Select Workshop (Optional)",
-    type: "select",
-    required: false,
-    options: [
-      { value: "Dr. Lisette Rodriguez: Workshop GRAPHY", label: "Dr. Lisette Rodriguez: Workshop GRAPHY" },
-      { value: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence" },
-    ],
-  },
+{
+  name: "workshop",
+  label: "Select Workshop (Optional)",
+  type: "select",
+  required: false,
+  multiple: true,
+  options: [
+    { value: "Dr. Lisette Rodriguez: Workshop GRAPHY", label: "Dr. Lisette Rodriguez: Workshop GRAPHY" },
+    { value: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence" },
+  ],
+},
   {
     name: "payment",
     label: "Select Payment Method",
     type: "select",
-    required: true,
+    required: true, 
     options: [
       { value: "Cash (same day)", label: "Cash (same day)" },
       { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
