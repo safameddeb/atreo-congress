@@ -5,56 +5,53 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 export default function Footer() {
   return (
     <footer className="mt-20 bg-[var(--navy)] text-white">
+
       <div className="section-shell grid gap-10 py-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
 
         <div className="space-y-5">
 
-<a
-  href="https://www.facebook.com/profile.php?id=61583725220400"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <img
-    src={congress.logos}
-    alt="ATREO and EOS logos"
-    className="h-25 w-auto rounded-2xl bg-white/5 p-2 hover:scale-105 transition"
-  />
-</a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61583725220400"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={congress.logos}
+              alt="ATREO and EOS logos"
+              className="h-25 w-auto rounded-2xl bg-white/5 p-2 hover:scale-105 transition"
+            />
+          </a>
+
           <h3 className="text-2xl font-semibold italic text-white/90">
             {congress.theme}
           </h3>
+
           <h3 className="text-2xl font-semibold italic text-white/90">
-            {congress.title}</h3>
-          <div>
+            {congress.title}
+          </h3>
 
-            {/* 🔥 Icônes cliquables */}
-            <div className="mt-3 flex items-center gap-4 text-white/75">
+          <div className="mt-3 flex items-center gap-4 text-white/75">
 
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/profile.php?id=61583725220400"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/75 hover:text-[var(--gold)] transition hover:scale-110"
-              >
-                <FaFacebookF className="text-lg" />
+            <a
+              href="https://www.facebook.com/profile.php?id=61583725220400"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[var(--gold)] transition hover:scale-110"
+            >
+              <FaFacebookF className="text-lg" />
+              <span className="text-sm font-medium">ATREO</span>
+            </a>
 
-                <span className="text-sm font-medium">ATREO</span>
-              </a>
+            <a
+              href="https://www.instagram.com/atreo_ig/?hl=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[var(--gold)] transition hover:scale-110"
+            >
+              <FaInstagram className="text-lg" />
+              <span className="text-sm font-medium">atreo-ig</span>
+            </a>
 
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/atreo_ig/?hl=fr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/75 hover:text-[var(--gold)] transition hover:scale-110"
-              >
-                <FaInstagram className="text-lg" />
-
-                <span className="text-sm font-medium">atreo-ig</span>
-              </a>
-
-            </div>
           </div>
         </div>
 
@@ -76,6 +73,28 @@ export default function Footer() {
         </div>
 
       </div>
+
+      {/* COPYRIGHT */}
+
+<div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
+  © 2026 ATREO Congress. Tous droits réservés. <br />
+  Website created by{" "}
+  <a
+    href="https://www.facebook.com/safa.safsoufa.18847/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-semibold text-white/70 hover:text-[var(--gold)] transition"
+  >
+    SM
+  </a>
+</div>
+
+
+
+
+
+
+
     </footer>
   );
 }

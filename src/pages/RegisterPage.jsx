@@ -8,7 +8,7 @@ export default function RegisterPage() {
         <div className="section-shell">
           <SectionHeader
             eyebrow="Registration"
-            title="Congress registration form"
+            title="Congress Registration Form"
             align="center"
           />
         </div>

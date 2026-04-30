@@ -9,7 +9,7 @@ export default function ProgramPage() {
         <div className="section-shell">
           <SectionHeader
             eyebrow="Program"
-            title="Congress program"
+            title="Congress Program"
             align="center"
           />
         </div>

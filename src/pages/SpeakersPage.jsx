@@ -9,7 +9,7 @@ export default function SpeakersPage() {
         <div className="section-shell">
           <SectionHeader
             eyebrow="Speakers"
-            title="Meet our distinguished speakers"
+            title="Meet our Distinguished Speakers"
             align="center"
           />
         </div>

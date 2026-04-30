@@ -1,6 +1,7 @@
 import beach from "../assets/beach.jpg";
 import poster from "../assets/poster.png";
 import speakerWall from "../assets/speaker-wall.jpg";
+import programPreCongress from "../assets/program-pre-congress.jpg";
 import programDay1 from "../assets/program-day-1.jpg";
 import programDay2 from "../assets/program-day-2.jpg";
 import sponsorsBoard from "../assets/sponsors-board.png";
@@ -269,14 +270,20 @@ export const speakers = [
 
 
 export const programmeDays = [
+    {
+    id: "day-0",
+    label: "Friday 12 June",
+    image: programPreCongress,
+    highlights: [
+      "Pre-Congress",
+    ],
+  },
   {
     id: "day-1",
     label: "Saturday 13 June",
     image: programDay1,
     highlights: [
-      "Graphy workshop & opening session",
-      "Advanced biomechanics, surgery & skeletal anchorage",
-      "Clinical lectures and biomechanics topics",
+      "Congress day 1",
     ],
   },
 
@@ -285,9 +292,8 @@ export const programmeDays = [
     label: "Sunday 14 June",
     image: programDay2,
     highlights: [
-      "Conference sessions and aligner topics",
-      "Complex malocclusion strategies",
-      "Direct impression workshop for aligners",
+      "Congress day 2",
+
     ],
   },
 ];
@@ -329,8 +335,9 @@ export const registerFields = [
   required: false,
   multiple: true,
   options: [
-    { value: "Dr. Lisette Rodriguez: Workshop GRAPHY", label: "Dr. Lisette Rodriguez: Workshop GRAPHY" },
-    { value: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence" },
+    { value: "Dr. Lisette Rodriguez: Workshop GRAPHY", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
+    { value: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (Price 150DT)" },
+    { value: "Dr. Patrice Bergeyron: Workshop : BasdiagProject", label: "Dr. Patrice Bergeyron: Workshop : BasdiagProject (Price 200DT) " },
   ],
 },
   {
@@ -428,7 +435,6 @@ export const sponsorGroups = [
       { name: "invisalign", image: invisalign },
       { name: "diamond", image: diamond },
       { name: "angelAligner", image: angelAligner },
-      { name: "mdc", image: mdc },
 
     ],
   },
@@ -445,6 +451,7 @@ export const sponsorGroups = [
 
     ],
   },
+ ///  esque je peut ajouter AVEC que le website creer par SM et en cliqhant sur sm il nou sede a mon fb https://www.facebook.com/safa.safsoufa.18847/
   {
     tier: "Silver Sponsors",
     logos: [
@@ -456,6 +463,8 @@ export const sponsorGroups = [
       { name: "dentamed", image: dentamed },
       { name: "advanced", image: advanced },
       { name: "stoderma", image: stoderma },
+      { name: "mdc", image: mdc },
+
 
     ],
   },
