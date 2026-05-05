@@ -32,6 +32,7 @@ import angelAligner from "../assets/sponsors/angel aligner.png";
 import sponsorimg from "../assets/sponsors/sponsorimg.jpg";
 
 import stoderma from "../assets/sponsors/stoderma.jpg";
+import basdiag from "../assets/sponsors/basdiag.jpg";
 import diamond from "../assets/sponsors/diamond.png";
 import expressMedical from "../assets/sponsors/express medical.png";
 import gum from "../assets/sponsors/gum.jpeg";
@@ -451,7 +452,6 @@ export const sponsorGroups = [
 
     ],
   },
- ///  esque je peut ajouter AVEC que le website creer par SM et en cliqhant sur sm il nou sede a mon fb https://www.facebook.com/safa.safsoufa.18847/
   {
     tier: "Silver Sponsors",
     logos: [
@@ -464,8 +464,7 @@ export const sponsorGroups = [
       { name: "advanced", image: advanced },
       { name: "stoderma", image: stoderma },
       { name: "mdc", image: mdc },
-
-
+      { name: "basdiag", image: basdiag },
     ],
   },
 ];
