@@ -348,7 +348,7 @@ export const registerFields = [
     options: [
       { value: "Dr. Lisette Rodriguez", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
       { value: "Dr. Mulhim Dumirieh", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (Price 150DT)" },
-      { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron: Integrating Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT) " },
+      { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron:Integrating Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT) " },
     ],
   },
   {
