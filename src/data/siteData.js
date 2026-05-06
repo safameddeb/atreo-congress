@@ -25,12 +25,12 @@ import maria from "../assets/maria.jpg";
 import skandar from "../assets/skandar ellouze.jpg";
 import salvadorromero from "../assets/WhatsApp Image 2026-03-17 at 05.57.50.jpeg";
 import yamen from "../assets/YAAMEN LAABIDI.jpeg";
+import leticia from "../assets/leticia.jpg";
 import zouhair_abidine from "../assets/ZOUHAIR ABIDINE.png";
 import zouhair_meskini from "../assets/zouhair meskini.png";
 import presidentPhoto from "../assets/president.jpg";
 import angelAligner from "../assets/sponsors/angel aligner.png";
 import sponsorimg from "../assets/sponsors/sponsorimg.jpg";
-
 import stoderma from "../assets/sponsors/stoderma.jpg";
 import basdiag from "../assets/sponsors/basdiag.jpg";
 import diamond from "../assets/sponsors/diamond.png";
@@ -147,11 +147,12 @@ export const speakers = [
     flag: emirates,
     image: abdelhakim,
   },
+
   {
-    name: "Dr. Yamen Labidi",
+    name: "Dr. Skandar Ellouze",
     nationality: "Tunisia",
     flag: tunisie,
-    image: yamen,
+    image: skandar,
   },
   {
     name: "Dr. Mulhem Dumirieh",
@@ -190,11 +191,18 @@ export const speakers = [
     image: ilyes,
   },
   {
-    name: "Dr. Skandar Ellouze",
+    name: "Dr. Leticia Perillo",
+    nationality: "italy",
+    flag: italy,
+    image: leticia,
+  },
+  {
+    name: "Dr. Yamen Labidi",
     nationality: "Tunisia",
     flag: tunisie,
-    image: skandar,
+    image: yamen,
   },
+
   {
     name: "Dr. Ignacio Arcos Palomino",
     nationality: "Spain",
@@ -207,24 +215,20 @@ export const speakers = [
     flag: france,
     image: jean,
   },
+    {
+    name: "Dr. Rafika Harmim",
+    nationality: "Algeria",
+    flag: algerie,
+    image: rafika,
+  },
   {
     name: "Dr. Khaled Aboulazm",
     nationality: "Egypt",
     flag: egypt,
     image: khaled,
   },
-  {
-    name: "Dr. Lisette Rodrigues",
-    nationality: "Spain",
-    flag: spain,
-    image: lisette,
-  },
-  {
-    name: "Dr. Rafika Harmim",
-    nationality: "Algeria",
-    flag: algerie,
-    image: rafika,
-  },
+
+
   {
     name: "Dr. Salvador Romero",
     nationality: "Mexico",
@@ -261,6 +265,12 @@ export const speakers = [
     flag: tunisie,
     image: zouhair_meskini,
   },
+    {
+    name: "Dr. Lisette Rodrigues",
+    nationality: "Spain",
+    flag: spain,
+    image: lisette,
+  },
   {
     name: "Dr. Mohammed Saleh",
     nationality: "United Arab Emirates",
@@ -271,7 +281,7 @@ export const speakers = [
 
 
 export const programmeDays = [
-    {
+  {
     id: "day-0",
     label: "Friday 12 June",
     image: programPreCongress,
@@ -329,23 +339,23 @@ export const registerFields = [
   { name: "speciality", label: "Speciality", type: "text", required: true },
   { name: "country", label: "Country", type: "text", required: true },
   { name: "city", label: "City", type: "text", required: true },
-{
-  name: "workshop",
-  label: "Select Workshop (Optional)",
-  type: "select",
-  required: false,
-  multiple: true,
-  options: [
-    { value: "Dr. Lisette Rodriguez: Workshop GRAPHY", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
-    { value: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (Price 150DT)" },
-    { value: "Dr. Patrice Bergeyron: Workshop : BasdiagProject", label: "Dr. Patrice Bergeyron: Workshop : BasdiagProject (Price 200DT) " },
-  ],
-},
+  {
+    name: "workshop",
+    label: "Select Workshop (Optional)",
+    type: "select",
+    required: false,
+    multiple: true,
+    options: [
+      { value: "Dr. Lisette Rodriguez", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
+      { value: "Dr. Mulhim Dumirieh", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (Price 150DT)" },
+      { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron: Integrating Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT) " },
+    ],
+  },
   {
     name: "payment",
     label: "Select Payment Method",
     type: "select",
-    required: true, 
+    required: true,
     options: [
       { value: "Cash (same day)", label: "Cash (same day)" },
       { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
@@ -360,7 +370,7 @@ export const registerFields = [
       { value: "S (Small)", label: "S (Small)" },
       { value: "M (Medium)", label: "M (Medium)" },
       { value: "L (Large)", label: "L (Large)" },
-      { value: "XL (Extra large)", label: "XL (Extra large)"},
+      { value: "XL (Extra large)", label: "XL (Extra large)" },
     ],
   }
 ];
