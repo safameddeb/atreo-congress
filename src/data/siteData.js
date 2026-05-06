@@ -30,7 +30,6 @@ import zouhair_abidine from "../assets/ZOUHAIR ABIDINE.png";
 import zouhair_meskini from "../assets/zouhair meskini.png";
 import presidentPhoto from "../assets/president.jpg";
 import angelAligner from "../assets/sponsors/angel aligner.png";
-import sponsorimg from "../assets/sponsors/sponsorimg.jpg";
 import stoderma from "../assets/sponsors/stoderma.jpg";
 import basdiag from "../assets/sponsors/basdiag.jpg";
 import diamond from "../assets/sponsors/diamond.png";
@@ -95,13 +94,6 @@ export const imageSpeakers = [
     image: ourspeakers,
   },
 ]
-export const imageSponsor = [
-  {
-
-    image: sponsorimg,
-  },
-]
-
 export const dinnerGala = [
   {
 

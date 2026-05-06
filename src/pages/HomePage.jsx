@@ -2,14 +2,12 @@ import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import SpeakerCard from "../components/SpeakerCard";
 import Speakerimg from "../components/imagespeaker";
-import Sponsorimg from "../components/ImageSponsors";
 import Dinnergala from "../components/DinnerGala";
 import AccomodationRegistration from "../components/Accomodation";
 
 import {
   congress,
   imageSpeakers,
-  imageSponsor,
   dinnerGala,
   tarifCongress,
   keynoteSpeakers,
