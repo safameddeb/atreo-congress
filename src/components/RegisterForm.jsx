@@ -59,8 +59,8 @@ export default function RegisterForm() {
         .map(option => option.value);
 
       // ✅ Limite à 2 workshops
-      if (selectedValues.length > 2) {
-        alert("You can select 1 or 2 workshops");
+      if (selectedValues.length > 3) {
+        alert("You can select 1, 2 or 3 workshops");
         return;
       }
 
