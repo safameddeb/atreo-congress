@@ -58,7 +58,7 @@ export default function RegisterForm() {
         .filter(option => option.selected)
         .map(option => option.value);
 
-      // ✅ Limite à 2 workshops
+      // ✅ Limite à 3 workshops
       if (selectedValues.length > 3) {
         alert("You can select 1, 2 or 3 workshops");
         return;
@@ -199,8 +199,8 @@ export default function RegisterForm() {
                               if (updated.includes(option.value)) {
                                 updated = updated.filter((v) => v !== option.value);
                               } else {
-                                if (updated.length >= 2) {
-                                  alert("Maximum 2 workshops");
+                                if (updated.length >= 3) {
+                                  alert("Maximum 3 workshops");
                                   return;
                                 }
                                 updated.push(option.value);
