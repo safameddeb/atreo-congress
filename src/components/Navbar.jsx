@@ -24,7 +24,7 @@ export default function Navbar() {
           />
           <div className="hidden sm:block">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">ATREO Congress</p>
-            <p className="text-sm font-medium text-[var(--navy)]">13–14 June 2026</p>
+            <p className="text-sm font-medium text-[var(--navy)]">12–13–14 June 2026</p>
           </div>
         </Link>
 

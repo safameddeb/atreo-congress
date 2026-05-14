@@ -379,7 +379,7 @@ export const registerFields = [
   { name: "city", label: "City", type: "text", required: true },
 {
   name: "workshop",
-  label: "Select Workshop (Optional) —  ⚠️Workshop Dr. Mulhim Dumirieh is fully booked.",
+  label: "Select Workshop (Optional) —  ⚠️Dr. Mulhim Dumirieh's Workshop is fully booked.",
   type: "select",
   required: false,
   multiple: true,
