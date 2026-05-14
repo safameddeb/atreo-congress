@@ -261,62 +261,74 @@ export default function HomePage() {
       </section>
 */}
 
-      <section className="section-shell">
-        <div className="marble-bg glass-card p-6 sm:p-10">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div>
-              <SectionHeader
-                eyebrow="Program"
-                title="Two day scientific program"
-              />
-              <div className="mt-6 space-y-4">
-                {programmeDays.map((day) => (
-                  <div
-                    key={day.id}
-                    className="rounded-[1.5rem] border border-white/70 bg-white/75 p-4 shadow-sm"
-                  >
-                    <p className="font-bold text-[var(--navy)]">{day.label}</p>
-                    <p className="mt-1 text-sm text-slate-600">
-                      {day.highlights[0]}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <Link to="/program" className="btn-primary mt-8">
-                Full congress program
-              </Link>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {programmeDays.map((day) => (
-                <div
-                  key={day.id}
-                  className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-lg shadow-slate-200/60"
-                >
-                  <img
-                    src={day.image}
-                    alt={day.label}
-                    className="h-full w-full rounded-[1.25rem] object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+
+
+
+
+
+
+
+
+
+
+<section className="section-shell">
+  <div className="marble-bg glass-card p-6 sm:p-10">
+    
+    <SectionHeader
+      eyebrow="Program"
+      title="Scientific Program"
+    />
+
+    {/* GRID PROGRAMMES */}
+    <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {programmeDays.map((day) => (
+        <div key={day.id} className="space-y-4">
+          
+          {/* CARREAU INFO */}
+          <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-5 shadow-sm">
+            <p className="font-bold text-[var(--navy)] text-lg">
+              {day.label}
+            </p>
+
+            <p className="mt-1 text-sm text-slate-600">
+              {day.highlights[0]}
+            </p>
           </div>
+
+          {/* IMAGE */}
+          <div className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-lg shadow-slate-200/60">
+            <img
+              src={day.image}
+              alt={day.label}
+              className="h-[420px] w-full rounded-[1.25rem] object-cover"
+            />
+          </div>
+
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* BUTTON */}
+    <div className="mt-10 flex justify-center">
+      <Link to="/program" className="btn-primary">
+        Full congress program
+      </Link>
+    </div>
+
+  </div>
+</section>
 
 
 
-      <section className="section-shell space-y-10">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeader eyebrow="Gala" title=" Diner Gala: 13 june 2026 - 20H " />
 
-        </div>
-        <div className="flex justify-center">
-          {dinnerGala.map((gala) => (
-            <Dinnergala key={gala.name + gala.role} gala={gala} />
-          ))}
-        </div>
-      </section>
+
+
+
+
+
+
+
+
 
 
       <section className="section-shell space-y-10">
@@ -334,3 +346,19 @@ export default function HomePage() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

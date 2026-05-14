@@ -22,6 +22,9 @@ import medsalah from "../assets/medsalah.jpg";
 import ramzi from "../assets/RAMZI HADDED.png";
 import lisette from "../assets/lisette.jpg";
 import maria from "../assets/maria.jpg";
+import tunis from "../assets/tunis.png";
+import jam from "../assets/jam.png";
+
 import skandar from "../assets/skandar ellouze.jpg";
 import salvadorromero from "../assets/WhatsApp Image 2026-03-17 at 05.57.50.jpeg";
 import yamen from "../assets/YAAMEN LAABIDI.jpeg";
@@ -31,7 +34,6 @@ import zouhair_meskini from "../assets/zouhair meskini.png";
 import presidentPhoto from "../assets/president.jpg";
 import angelAligner from "../assets/sponsors/angel aligner.png";
 import sponsorimg from "../assets/sponsors/sponsorimg.jpg";
-import stoderma from "../assets/sponsors/stoderma.jpg";
 import basdiag from "../assets/sponsors/basdiag.jpg";
 import diamond from "../assets/sponsors/diamond.png";
 import expressMedical from "../assets/sponsors/express medical.png";
@@ -75,8 +77,8 @@ export const congress = {
   title: "11th International Orthodontic Congress",
   subtitle: "ATREO International Orthodontic Congress",
   theme: "Sun, Sea & Smiles",
-  dates: "13–14 June 2026",
-  hotel: "Golden Tulip Taj Sultan, Hammamet",
+  dates: "12–13–14 June 2026",
+  hotel: "Royal Tulip Taj Sultan, Hammamet",
   cta: "Register now",
   homeBackground: beach,
   poster,
@@ -191,8 +193,8 @@ export const speakers = [
     image: ilyes,
   },
   {
-    name: "Dr. Leticia Perillo",
-    nationality: "italy",
+    name: "Dr. LetiZia Perillo",
+    nationality: "Italy",
     flag: italy,
     image: leticia,
   },
@@ -215,7 +217,7 @@ export const speakers = [
     flag: france,
     image: jean,
   },
-    {
+  {
     name: "Dr. Rafika Harmim",
     nationality: "Algeria",
     flag: algerie,
@@ -265,7 +267,7 @@ export const speakers = [
     flag: tunisie,
     image: zouhair_meskini,
   },
-    {
+  {
     name: "Dr. Lisette Rodrigues",
     nationality: "Spain",
     flag: spain,
@@ -307,6 +309,42 @@ export const programmeDays = [
 
     ],
   },
+      {
+    id: "day-6",
+    label: "Saturday 13 June",
+    image: gala,
+    highlights: [
+      "Diner Gala: 13 june 2026 - 20H",
+    ],
+  },
+
+    {
+    id: "day-3",
+    label: "Monday 15 June",
+    image: jam,
+    highlights: [
+      "Kairouan - ElJem",
+
+    ],
+  },
+    {
+    id: "day-4",
+    label: "Tuesday 16 June",
+    image: tunis,
+    highlights: [
+      "Medina - Carthage - Sidi Bousaid",
+
+    ],
+  },
+    {
+    id: "day-5",
+    label: "Registration and Accomodation ",
+    image: tarif,
+    highlights: [
+      "Registration fees",
+
+    ],
+  },
 ];
 
 export const sponsorTiers = [
@@ -339,18 +377,23 @@ export const registerFields = [
   { name: "speciality", label: "Speciality", type: "text", required: true },
   { name: "country", label: "Country", type: "text", required: true },
   { name: "city", label: "City", type: "text", required: true },
-  {
-    name: "workshop",
-    label: "Select Workshop (Optional)",
-    type: "select",
-    required: false,
-    multiple: true,
-    options: [
-      { value: "Dr. Lisette Rodriguez", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
-      { value: "Dr. Mulhim Dumirieh", label: "Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (Price 150DT)" },
-      { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron:Integrating Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT) " },
-    ],
-  },
+{
+  name: "workshop",
+  label: "Select Workshop (Optional) —  ⚠️Workshop Dr. Mulhim Dumirieh is fully booked.",
+  type: "select",
+  required: false,
+  multiple: true,
+  options: [
+    { value: "Dr. Lisette Rodriguez", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
+
+    // Workshop complet
+    // Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (COMPLET)
+
+    { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron: Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT)" },
+  ],
+
+  description: "Workshop Dr. Mulhim Dumirieh: COMPLET",
+},
   {
     name: "payment",
     label: "Select Payment Method",
@@ -472,7 +515,6 @@ export const sponsorGroups = [
       { name: "newmedplus", image: newmedplus },
       { name: "dentamed", image: dentamed },
       { name: "advanced", image: advanced },
-      { name: "stoderma", image: stoderma },
       { name: "mdc", image: mdc },
       { name: "basdiag", image: basdiag },
     ],
