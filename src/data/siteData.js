@@ -43,6 +43,7 @@ import newmed from "../assets/sponsors/newmed.png";
 import orthopartner from "../assets/sponsors/orthoPartner.png";
 import meduse from "../assets/sponsors/meduse.jpg";
 import newmedplus from "../assets/sponsors/newmedplus.png";
+import dentalbox from "../assets/sponsors/dentalbox.jpg";
 import jasminaligners from "../assets/sponsors/jasminaligners.png";
 import alignright from "../assets/sponsors/alignright.png";
 import invisalign from "../assets/sponsors/invisalign.png";
@@ -309,7 +310,7 @@ export const programmeDays = [
 
     ],
   },
-      {
+  {
     id: "day-6",
     label: "Saturday 13 June",
     image: gala,
@@ -318,7 +319,7 @@ export const programmeDays = [
     ],
   },
 
-    {
+  {
     id: "day-3",
     label: "Monday 15 June",
     image: jam,
@@ -327,7 +328,7 @@ export const programmeDays = [
 
     ],
   },
-    {
+  {
     id: "day-4",
     label: "Tuesday 16 June",
     image: tunis,
@@ -336,7 +337,7 @@ export const programmeDays = [
 
     ],
   },
-    {
+  {
     id: "day-5",
     label: "Registration and Accomodation ",
     image: tarif,
@@ -377,23 +378,30 @@ export const registerFields = [
   { name: "speciality", label: "Speciality", type: "text", required: true },
   { name: "country", label: "Country", type: "text", required: true },
   { name: "city", label: "City", type: "text", required: true },
-{
-  name: "workshop",
-  label: "Select Workshop (Optional) —  ⚠️Dr. Mulhim Dumirieh's Workshop is fully booked.",
+  {
+    name: "workshop",
+    label: "Select Workshop (Optional) —  ⚠️Dr. Mulhim Dumirieh's Workshop is fully booked.",
+    type: "select",
+    required: false,
+    multiple: true,
+    options: [
+      { value: "Dr. Lisette Rodriguez", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
+      // Workshop complet
+      // Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (COMPLET)
+      { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron: Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT)" },
+    ],
+  },
+  {
+  name: "galaDinner",
+  label: "Gala Dinner Saturday 13 june (180DT)",
   type: "select",
-  required: false,
-  multiple: true,
+  required: true,
   options: [
-    { value: "Dr. Lisette Rodriguez", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
-
-    // Workshop complet
-    // Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (COMPLET)
-
-    { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron: Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT)" },
+    { value: "Yes", label: "Yes" },
+    { value: "No", label: "No" },
   ],
-
-  description: "Workshop Dr. Mulhim Dumirieh: COMPLET",
 },
+
   {
     name: "payment",
     label: "Select Payment Method",
@@ -404,6 +412,7 @@ export const registerFields = [
       { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
     ],
   },
+
   {
     name: "size",
     label: "Select T-shirt size",
@@ -517,6 +526,8 @@ export const sponsorGroups = [
       { name: "advanced", image: advanced },
       { name: "mdc", image: mdc },
       { name: "basdiag", image: basdiag },
+      { name: "dentalbox", image: dentalbox },
+
     ],
   },
 ];

@@ -88,6 +88,7 @@ export default function RegisterForm() {
           country: form.country,
           city: form.city,
           workshop: form.workshop,
+          galaDinner: form.galaDinner,
           payment: form.payment,
           size: form.size,
 
