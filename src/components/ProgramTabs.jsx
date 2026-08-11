@@ -7,25 +7,41 @@ export default function ProgramTabs() {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {programmeDays.map((item, index) => (
+      <style>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 md:gap-8">
+        {programmeDays.slice(0, 2).map((item, index) => (
           <button
             key={item.id}
             type="button"
             onClick={() => setSelectedImage(item)}
-            className={`group glass-card overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:shadow-2xl ${
-              index === 6 ? "lg:col-start-2" : ""
-            }`}
+            className="group glass-card overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
+            style={{
+              animation: `slideDown 0.7s ease-out ${index * 0.2}s both`,
+            }}
           >
-            <img
-              src={item.image}
-              alt={item.label}
-              className="h-full w-full rounded-[1.25rem] border border-slate-200 bg-white object-cover transition duration-300 group-hover:scale-[1.02]"
-            />
+<h3 className="mb-5 text-center text-l font-bold tracking-wide text-[var(--navy)] md:text-3xl">
+  {item.label}
+</h3>
 
-            <h3 className="mt-4 text-center text-lg font-bold text-[var(--navy)]">
-              {item.label}
-            </h3>
+<img
+  src={item.image}
+  alt={item.label}
+  className="w-full rounded-xl object-contain transition duration-300 group-hover:scale-[1.02]"
+/>
+
+           
           </button>
         ))}
       </div>
@@ -39,7 +55,7 @@ export default function ProgramTabs() {
             type="button"
             onClick={() => setSelectedImage(null)}
             className="absolute right-4 top-4 rounded-full bg-white/15 p-3 text-white backdrop-blur transition hover:bg-white/25"
-            aria-label="Close"
+            aria-label="Fermer"
           >
             <X size={28} />
           </button>
@@ -47,7 +63,7 @@ export default function ProgramTabs() {
           <img
             src={selectedImage.image}
             alt={selectedImage.label}
-            onClick={(e) => e.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
             className="max-h-[92vh] max-w-[96vw] rounded-xl bg-white object-contain shadow-2xl"
           />
         </div>

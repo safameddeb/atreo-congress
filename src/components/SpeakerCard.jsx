@@ -1,32 +1,53 @@
-///
 export default function SpeakerCard({ speaker }) {
   return (
-    <article className="relative overflow-hidden rounded-[28px] border-4 border-[#dff0df] bg-[#002c84] shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
-      <div className="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white text-2xl shadow-md">
-        <img
-          src={speaker.flag}
-          alt={speaker.nationality}
-          title={speaker.nationality}
-          className="w-6 h-4 object-cover rounded-sm"
-        />
-      </div>
-
-      <div className="aspect-[4/4.2] overflow-hidden">
+    <article className="group relative flex h-[430px] w-full flex-col overflow-hidden rounded-[24px] border border-[#0d2344]/80 bg-[#0d2344] shadow-[0_18px_40px_rgba(13,35,68,0.22)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_55px_rgba(13,35,68,0.32)]">
+      {/* Photo du conférencier */}
+      <div className="relative h-[270px] shrink-0 overflow-hidden bg-slate-200">
         <img
           src={speaker.image}
           alt={speaker.name}
-          className="h-full w-full object-cover"
+          loading="lazy"
+          className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
         />
+
+        {/* Dégradé élégant */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d2344] via-[#0d2344]/5 to-transparent" />
+
+        {/* Ligne dorée */}
+        <div className="absolute bottom-0 left-1/2 h-[2px] w-16 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#d7bd78] to-transparent transition-all duration-500 group-hover:w-28" />
       </div>
 
-      <div className="px-4 pb-5 pt-4 text-center">
-        <h3 className="text-sm font-extrabold uppercase leading-snug text-white sm:text-base">
-          {speaker.name}
-        </h3>
-        <p className="mt-1 text-xs font-medium text-[#d7e6ff] sm:text-sm">
-          {speaker.nationality}
-        </p>
+      {/* Informations du conférencier */}
+      <div className="relative flex flex-1 flex-col items-center px-5 pb-6 pt-4 text-center">
+        {/* Nom : espace identique de deux lignes */}
+        <div className="flex min-h-[58px] w-full items-center justify-center">
+          <h3 className="line-clamp-2 font-serif text-lg font-semibold leading-snug tracking-wide text-white sm:text-xl">
+            {speaker.name}
+          </h3>
+        </div>
+
+        {/* Séparateur */}
+        <div className="mx-auto my-2 h-px w-8 shrink-0 bg-[#d7bd78]/60" />
+
+        {/* Drapeau et nationalité */}
+        <div className="flex min-h-[45px] w-full flex-1 items-center justify-center gap-2">
+          {speaker.flag && (
+            <img
+              src={speaker.flag}
+              alt={`Drapeau ${speaker.nationality}`}
+              loading="lazy"
+              className="h-4 w-6 shrink-0 rounded-[2px] object-cover shadow-[0_2px_6px_rgba(0,0,0,0.3)] ring-1 ring-white/20"
+            />
+          )}
+
+          <p className="line-clamp-2 text-xs font-medium uppercase leading-relaxed tracking-[0.18em] text-white/65 sm:text-sm">
+            {speaker.nationality}
+          </p>
+        </div>
       </div>
+
+      {/* Lueur décorative */}
+      <div className="pointer-events-none absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-[#d7bd78]/10 blur-2xl transition-all duration-500 group-hover:bg-[#d7bd78]/20" />
     </article>
   );
 }

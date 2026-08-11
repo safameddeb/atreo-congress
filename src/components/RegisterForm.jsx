@@ -1,7 +1,17 @@
 import emailjs from "@emailjs/browser";
 import { registerFields } from "../data/siteData";
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle } from "lucide-react";
+import {
+  CalendarDays,
+  Check,
+  ChevronDown,
+  Hotel,
+  Mail,
+  MessageCircle,
+  Send,
+  Sparkles,
+} from "lucide-react";
+
 const initialForm = {
   firstName: "",
   lastName: "",
@@ -9,12 +19,12 @@ const initialForm = {
   phone: "",
   speciality: "",
   country: "",
-  city: "",
-  workshop: [], // ✅ au lieu de ""
+  workshop: [],
+  status: "",
   payment: "",
+  galaDinner: "",
   size: "",
-  showWorkshop: false, // ✅ AJOUT OBLIGATOIRE
-  // ✅ HOTEL (AJOUT ICI)
+  showWorkshop: false,
   needHotel: false,
   roomType: "",
   checkIn: "",
@@ -48,25 +58,28 @@ export default function RegisterForm() {
     };
   }, []);
 
-
-
   const handleChange = (event) => {
     const { name, value, options, multiple } = event.target;
 
     if (multiple) {
       const selectedValues = Array.from(options)
-        .filter(option => option.selected)
-        .map(option => option.value);
+        .filter((option) => option.selected)
+        .map((option) => option.value);
 
-      // ✅ Limite à 3 workshops
       if (selectedValues.length > 3) {
-        alert("You can select 1, 2 or 3 workshops");
+        alert("Vous pouvez sélectionner 1, 2 ou 3 ateliers");
         return;
       }
 
-      setForm((current) => ({ ...current, [name]: selectedValues }));
+      setForm((current) => ({
+        ...current,
+        [name]: selectedValues,
+      }));
     } else {
-      setForm((current) => ({ ...current, [name]: value }));
+      setForm((current) => ({
+        ...current,
+        [name]: value,
+      }));
     }
   };
 
@@ -86,306 +99,416 @@ export default function RegisterForm() {
           phone: form.phone,
           speciality: form.speciality,
           country: form.country,
-          city: form.city,
           workshop: form.workshop,
           galaDinner: form.galaDinner,
+          status: form.status,
           payment: form.payment,
           size: form.size,
 
-          // 🏨 HOTEL (IMPORTANT)
           needHotel: form.needHotel ? "Yes" : "No",
           roomType: form.roomType,
           checkIn: form.checkIn,
           checkOut: form.checkOut,
           hotelNotes: form.hotelNotes,
         },
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
       );
 
       setStatus("success");
       setForm(initialForm);
-
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'email :", error);
       setStatus("error");
-      setErrorMessage("Failed to send registration. Please try again.");
+      setErrorMessage(
+        "Échec de l’envoi de l’inscription. Veuillez réessayer."
+      );
     }
   };
-  /////////////////////////////
+
+  const inputClass =
+    "mt-2 w-full rounded-xl border border-[#d9d2c3] bg-white/90 px-4 py-3.5 text-sm text-[#17233b] shadow-sm outline-none transition duration-200 placeholder:text-slate-400 hover:border-[#b9a56a] focus:border-[#b2944f] focus:ring-4 focus:ring-[#d7bd78]/20";
 
   return (
-    <div className="glass-card overflow-hidden">
-      <div className="bg-gradient-to-r from-cyan-600 to-[var(--navy)] px-6 py-8 text-white sm:px-10 sm:py-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">
-          Congress registration
-        </p>
-        <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
-          Register for ATREO congress 2026
-        </h2>
-        <p className="mt-3 max-w-2xl text-sm text-white/80 sm:text-base">
-          Fill in the form below with your name, specialty, country, city, and
-          contact details.
-        </p>
-      </div>
+    <div className="relative overflow-hidden rounded-[2rem] border border-[#e5dece] bg-[#fbf9f4] shadow-[0_30px_80px_-35px_rgba(10,28,55,0.45)]">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full border border-[#d7bd78]/20" />
+      <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full border border-[#d7bd78]/20" />
+
+      <header className="relative overflow-hidden bg-[#0d2344] px-7 py-10 text-white sm:px-12 sm:py-12">
+        <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[#b2944f]/15 to-transparent" />
+
+        <div className="relative max-w-3xl">
+          <div className="mb-5 flex items-center gap-3 text-[#e5cc8b]">
+            <span className="h-px w-10 bg-[#d7bd78]" />
+
+            <p className="text-xs font-semibold uppercase tracking-[0.3em]">
+              ATREO · Monastir 2026
+            </p>
+          </div>
+
+          <h2 className="font-serif text-3xl font-medium leading-tight tracking-tight sm:text-5xl">
+Inscription aux Assises de l’Orthodontie 2026.          </h2>
+
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+            Complétez votre inscription et votre demande d’hébergement pour le
+            congrès d’orthodontie 2026.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium uppercase tracking-[0.14em] text-white/65">
+            <span className="flex items-center gap-2">
+              <CalendarDays className="h-4 w-4 text-[#d7bd78]" />
+              23–24 octobre 2026
+            </span>
+
+            <span className="flex items-center gap-2">
+              <Hotel className="h-4 w-4 text-[#d7bd78]" />
+              Royal Thalassa Monastir
+            </span>
+          </div>
+        </div>
+      </header>
 
       <form
         onSubmit={handleSubmit}
-        className="grid gap-5 p-6 sm:grid-cols-2 sm:p-10"
+        className="relative p-6 sm:p-10 lg:p-12"
       >
+        <section>
+          <div className="mb-7 flex items-center gap-4">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2344] text-sm font-semibold text-[#e5cc8b]">
+              01
+            </span>
 
-        {registerFields.map((field) => {
-          const sharedProps = {
-            id: field.name,
-            name: field.name,
-            value: form[field.name],
-            onChange: handleChange,
-            required: field.required,
-            className:
-              "mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100",
-          };
+            <div>
+              <h3 className="font-serif text-xl text-[#0d2344]">
+                Informations personnelles
+              </h3>
 
-          return (
-            <label
-              key={field.name}
-              htmlFor={field.name}
-              className={field.type === "textarea" || field.type === "select" ? "sm:col-span-2" : ""}
-            >
-              <span className="text-sm font-semibold text-slate-700">
-                {field.label}
-              </span>
-
-              {field.type === "textarea" ? (
-                <>
-                  <textarea {...sharedProps} rows={5} />
-
-                  {/* Message d'avertissement après le textarea */}
-                  {/*
-          {field.name === "message" && (
-            <div className="mt-2 flex items-start gap-2 text-yellow-800 text-sm">
-              <span className="text-yellow-600 font-bold">⚠️</span>
-              <span>Le paiement sera à effectuer en espèces ou par virement bancaire.</span>
+              <p className="mt-0.5 text-sm text-slate-500">
+                Veuillez renseigner vos coordonnées et vos informations
+                professionnelles.
+              </p>
             </div>
-          )}
-*/}
-                </>
-              ) : field.name === "workshop" ? (
-                <div ref={dropdownRef} className="relative mt-2">
-                  {/* Bouton principal */}
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setForm((prev) => ({
-                        ...prev,
-                        showWorkshop: !prev.showWorkshop,
-                      }))
-                    }
-                    className={sharedProps.className + " text-left"}
-                  >
-                    {form.workshop.length > 0
-                      ? form.workshop.join(", ")
-                      : "-- Select your choice --"}
-                  </button>
-
-                  {/* Dropdown */}
-                  {form.showWorkshop && (
-                    <div className="absolute z-10 mt-2 w-full rounded-xl border bg-white shadow-lg p-3">
-                      {field.options.map((option) => (
-                        <label key={option.value} className="flex items-center gap-2 py-1">
-                          <input
-                            type="checkbox"
-                            checked={form.workshop.includes(option.value)}
-                            onChange={() => {
-                              let updated = [...form.workshop];
-
-                              if (updated.includes(option.value)) {
-                                updated = updated.filter((v) => v !== option.value);
-                              } else {
-                                if (updated.length >= 3) {
-                                  alert("Maximum 3 workshops");
-                                  return;
-                                }
-                                updated.push(option.value);
-                              }
-
-                              setForm((prev) => ({
-                                ...prev,
-                                workshop: updated,
-                              }));
-                            }}
-                          />
-                          <span>{option.label}</span>
-                        </label>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : field.type === "select" ? (
-                <select {...sharedProps}>
-                  <option value="">-- Select your choice --</option>
-                  {field.options.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input {...sharedProps} type={field.type} />
-              )}
-            </label>
-          );
-        })}
-
-
-        {/* HOTEL ACCOMMODATION */}
-
-        {/* 🏨 HOTEL CARD PREMIUM */}
-        <div className="sm:col-span-2 mt-6 rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-
-          {/* HEADER */}
-          <div className="bg-gradient-to-r from-slate-900 to-cyan-700 px-6 py-5 text-white">
-            <h3 className="text-lg font-semibold">
-              Hotel Accommodation (Optional)
-            </h3>
-            <p className="text-xs text-white/80 mt-1">
-              Golden Tulip Taj Sultan, Hammamet    </p>
           </div>
 
-          {/* BODY */}
-          <div className="p-6 space-y-6">
+          <div className="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+            {registerFields.map((field) => {
+              const sharedProps = {
+                id: field.name,
+                name: field.name,
+                value: form[field.name] ?? "",
+                onChange: handleChange,
+                required: field.required,
+                className: inputClass,
+              };
 
-            {/* TOGGLE */}
-            <label className="flex items-center justify-between cursor-pointer">
-              <span className="font-medium text-slate-700">
-                I need hotel accommodation
+              const wideField =
+                field.type === "textarea" || field.type === "select";
+
+              return (
+                <label
+                  key={field.name}
+                  htmlFor={field.name}
+                  className={wideField ? "sm:col-span-2" : ""}
+                >
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[#42506a]">
+                    {field.label}
+
+                    {field.required && (
+                      <span className="ml-1 text-[#b2944f]">*</span>
+                    )}
+                  </span>
+
+                  {field.type === "textarea" ? (
+                    <textarea {...sharedProps} rows={4} />
+                  ) : field.name === "workshop" ? (
+                    <div ref={dropdownRef} className="relative mt-2">
+                      <button
+                        id={field.name}
+                        type="button"
+                        aria-expanded={form.showWorkshop}
+                        onClick={() =>
+                          setForm((prev) => ({
+                            ...prev,
+                            showWorkshop: !prev.showWorkshop,
+                          }))
+                        }
+                        className={`${inputClass} mt-0 flex items-center justify-between text-left`}
+                      >
+                        <span
+                          className={
+                            form.workshop.length
+                              ? "text-[#17233b]"
+                              : "text-slate-400"
+                          }
+                        >
+                          {form.workshop.length
+                            ? form.workshop.join(", ")
+                            : "Sélectionnez jusqu’à 3 ateliers"}
+                        </span>
+
+                        <ChevronDown
+                          className={`h-4 w-4 text-[#b2944f] transition ${
+                            form.showWorkshop ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {form.showWorkshop && (
+                        <div className="absolute z-20 mt-2 w-full overflow-hidden rounded-xl border border-[#e5dece] bg-white p-2 shadow-xl">
+                          {field.options.map((option) => {
+                            const selected = form.workshop.includes(
+                              option.value
+                            );
+
+                            return (
+                              <label
+                                key={option.value}
+                                className="flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-[#263650] transition hover:bg-[#f7f2e7]"
+                              >
+                                <input
+                                  type="checkbox"
+                                  className="sr-only"
+                                  checked={selected}
+                                  onChange={() => {
+                                    let updated = [...form.workshop];
+
+                                    if (selected) {
+                                      updated = updated.filter(
+                                        (value) => value !== option.value
+                                      );
+                                    } else {
+                                      if (updated.length >= 3) {
+                                        alert("Maximum 3 ateliers");
+                                        return;
+                                      }
+
+                                      updated.push(option.value);
+                                    }
+
+                                    setForm((prev) => ({
+                                      ...prev,
+                                      workshop: updated,
+                                    }));
+                                  }}
+                                />
+
+                                <span
+                                  className={`flex h-5 w-5 items-center justify-center rounded border ${
+                                    selected
+                                      ? "border-[#b2944f] bg-[#b2944f] text-white"
+                                      : "border-[#cec5b3] bg-white"
+                                  }`}
+                                >
+                                  {selected && (
+                                    <Check className="h-3.5 w-3.5" />
+                                  )}
+                                </span>
+
+                                <span>{option.label}</span>
+                              </label>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  ) : field.type === "select" ? (
+                    <select {...sharedProps}>
+                      <option value="">Sélectionnez votre choix</option>
+
+                      {field.options.map((option) => (
+                        <option
+                          key={option.value}
+                          value={option.value}
+                        >
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input {...sharedProps} type={field.type} />
+                  )}
+                </label>
+              );
+            })}
+          </div>
+        </section>
+
+        <div className="my-10 h-px bg-gradient-to-r from-transparent via-[#d8cfbd] to-transparent" />
+
+        <section>
+          <div className="mb-7 flex items-center gap-4">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2344] text-sm font-semibold text-[#e5cc8b]">
+              02
+            </span>
+
+            <div>
+              <h3 className="font-serif text-xl text-[#0d2344]">
+                Hébergement à l’hôtel
+              </h3>
+
+              <p className="mt-0.5 text-sm text-slate-500">
+                Réservation facultative au Royal Thalassa Monastir.
+              </p>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-[#ddd4c2] bg-white shadow-sm">
+            <label className="flex cursor-pointer items-center justify-between gap-5 p-5 sm:p-6">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f4efe4] text-[#9c7d37]">
+                  <Hotel className="h-5 w-5" />
+                </span>
+
+                <div>
+                  <span className="block font-semibold text-[#17233b]">
+                    J’ai besoin d’un hébergement à l’hôtel
+                  </span>
+
+                  <span className="mt-1 block text-sm text-slate-500">
+                    Ajouter une demande de chambre à mon inscription.
+                  </span>
+                </div>
+              </div>
+
+              <span
+                className={`relative h-7 w-12 shrink-0 rounded-full transition ${
+                  form.needHotel ? "bg-[#b2944f]" : "bg-slate-200"
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  className="sr-only"
+                  checked={form.needHotel}
+                  onChange={(event) =>
+                    setForm((prev) => ({
+                      ...prev,
+                      needHotel: event.target.checked,
+                    }))
+                  }
+                />
+
+                <span
+                  className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition ${
+                    form.needHotel ? "left-6" : "left-1"
+                  }`}
+                />
               </span>
-
-              <input
-                type="checkbox"
-                className="w-5 h-5 accent-cyan-600"
-                checked={form.needHotel}
-                onChange={(e) =>
-                  setForm((prev) => ({
-                    ...prev,
-                    needHotel: e.target.checked,
-                  }))
-                }
-              />
             </label>
 
-            {/* CONTENT */}
             {form.needHotel && (
-              <div className="grid gap-5 sm:grid-cols-2 animate-fadeIn">
-
-                {/* ROOM TYPE */}
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-slate-700">
-                    Room type
-                  </label>
+              <div className="grid gap-5 border-t border-[#eee7d9] bg-[#fcfaf6] p-5 sm:grid-cols-2 sm:p-6">
+                <label className="sm:col-span-2">
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[#42506a]">
+                    Type de chambre *
+                  </span>
 
                   <select
                     name="roomType"
                     value={form.roomType}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:ring-2 focus:ring-cyan-200"
-                    required
+                    className={inputClass}
+                    required={form.needHotel}
                   >
-                    <option value="">Select room</option>
-                    <option value="Single Room">Single Room</option>
-                    <option value="Double Room">Double Room</option>
+                    <option value="">Sélectionnez une chambre</option>
+
+                    <option value="Single Room">
+                      Chambre individuelle (LPD) · 240 TND / nuit
+                    </option>
+
+                    <option value="Double Room">
+                      Chambre double (LPD) · 340 TND / nuit
+                    </option>
                   </select>
-                </div>
+                </label>
 
-                {/* CHECK-IN + CHECK-OUT (SAME LINE) */}
-                <div className="sm:col-span-2 grid grid-cols-2 gap-4">
+                <label>
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[#42506a]">
+                    Date d’arrivée *
+                  </span>
 
-                  {/* CHECK-IN */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">
-                      Check-in
-                    </label>
+                  <input
+                    type="date"
+                    name="checkIn"
+                    value={form.checkIn}
+                    onChange={handleChange}
+                    className={inputClass}
+                    required={form.needHotel}
+                  />
+                </label>
 
-                    <input
-                      type="date"
-                      name="checkIn"
-                      value={form.checkIn}
-                      onChange={handleChange}
-                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:ring-2 focus:ring-cyan-200"
-                      required
-                    />
-                  </div>
+                <label>
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[#42506a]">
+                    Date de départ *
+                  </span>
 
-                  {/* CHECK-OUT */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">
-                      Check-out
-                    </label>
+                  <input
+                    type="date"
+                    name="checkOut"
+                    value={form.checkOut}
+                    onChange={handleChange}
+                    className={inputClass}
+                    required={form.needHotel}
+                  />
+                </label>
 
-                    <input
-                      type="date"
-                      name="checkOut"
-                      value={form.checkOut}
-                      onChange={handleChange}
-                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:ring-2 focus:ring-cyan-200"
-                      required
-                    />
-                  </div>
-
-                </div>
-
-
-                {/* NOTE */}
-                <p className="sm:col-span-2 text-sm text-slate-700 flex items-center gap-2">
-                  <MessageCircle className="text-green-600 w-5 h-5" />
+                <div className="sm:col-span-2 flex items-start gap-3 rounded-xl border border-[#e5dece] bg-white p-4 text-sm leading-6 text-slate-600">
+                  <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#b2944f]" />
 
                   <span>
-                    If you have any questions, please contact Zeineb:{" "}
+                    Pour toute demande particulière, contactez-nous à
+                    l’adresse{" "}
                     <a
-                      href="https://wa.me/21629361410"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-green-600 font-semibold hover:underline"
+                      href="mailto:atreocongress2026@gmail.com"
+                      className="font-semibold text-[#0d2344] underline decoration-[#d7bd78] underline-offset-4"
                     >
-                      +216 29 361 410
+                      atreocongress2026@gmail.com
                     </a>
                   </span>
-                </p>
+                </div>
               </div>
             )}
           </div>
-        </div>
+        </section>
 
+        <div className="mt-10 rounded-2xl bg-[#0d2344] p-5 text-white sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
+          <div className="mb-5 flex items-center gap-3 sm:mb-0">
+            <Mail className="h-5 w-5 shrink-0 text-[#d7bd78]" />
 
+            <p className="text-sm leading-6 text-white/70">
+              Votre inscription sera envoyée par email de manière sécurisée.
+            </p>
+          </div>
 
-
-
-
-        <div className="sm:col-span-2 flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="submit"
             disabled={status === "sending"}
-            className="btn-primary disabled:opacity-60"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#c3a45d] px-6 py-3.5 text-sm font-bold text-[#0d2344] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#d7bd78] focus:outline-none focus:ring-4 focus:ring-[#d7bd78]/30 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
-            {status === "sending" ? "Sending..." : "Submit registration"}
+            {status === "sending" ? (
+              <Sparkles className="h-4 w-4 animate-pulse" />
+            ) : (
+              <Send className="h-4 w-4" />
+            )}
+
+            {status === "sending"
+              ? "Envoi en cours..."
+              : "Envoyer l’inscription"}
           </button>
-
-          {status === "success" && (
-            <p className="text-sm font-medium text-emerald-700">
-              Registration sent successfully.
-            </p>
-          )}
-
-          {status === "error" && (
-            <p className="text-sm font-medium text-red-600">{errorMessage}</p>
-          )}
-
-          {status === "idle" && (
-            <p className="text-sm text-slate-500">
-              Your registration will be sent by email.
-            </p>
-          )}
         </div>
-      </form>
 
+        {status === "success" && (
+          <p className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">
+            Inscription envoyée avec succès.
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+            {errorMessage}
+          </p>
+        )}
+      </form>
     </div>
   );
 }

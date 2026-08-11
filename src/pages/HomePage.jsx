@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import SpeakerCard from "../components/SpeakerCard";
@@ -17,137 +18,653 @@ import {
   sponsorTiers,
   sponsorsPreview,
   presidentWelcome,
-  presidentcongressWelcome,
   copresidentcongressWelcome,
 
 } from "../data/siteData";
 
 export default function HomePage() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(
+        (previousImage) =>
+          (previousImage + 1) % congress.posters.length
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(".section-shell");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("section-is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -60px 0px",
+      }
+    );
+
+    sections.forEach((section) => {
+      section.classList.add("section-reveal");
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="space-y-20 pb-4">
-      <section className="relative overflow-hidden">
+    <>
+      <section className="hero-section relative min-h-screen overflow-hidden bg-[#071327]">
+        {/* Arrière-plan */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${congress.homeBackground})` }}
+          className="hero-background absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${congress.homeBackground})`,
+          }}
         />
-        <div className="hero-overlay absolute inset-0" />
-        <div className="section-shell relative grid min-h-[78vh] items-center gap-12 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
-          <div className="max-w-2xl text-white">
-            <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white/80 backdrop-blur-sm">
-              {congress.theme}
-            </span>
-            <h1 className="mt-6 text-balance text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
-              {congress.title}
+
+        {/* Calques sombres */}
+<div className="absolute inset-0 bg-[#061226]/45" />
+
+<div className="absolute inset-0 bg-gradient-to-r from-[#071327]/75 via-[#071327]/55 to-[#071327]/25" />
+
+<div className="absolute inset-0 bg-gradient-to-t from-[#071327]/60 via-transparent to-[#071327]/15" />
+        {/* Lumières décoratives */}
+        <div className="hero-glow absolute -bottom-32 left-1/4 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl" />
+
+        <div className="hero-glow-two absolute right-10 top-10 h-80 w-80 rounded-full bg-sky-400/10 blur-3xl" />
+
+        <div className="relative z-10 mx-auto grid min-h-screen w-full max-w-7xl items-center gap-14 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
+          {/* Partie gauche */}
+          <div className="hero-content relative -top-20 text-center text-white lg:text-left">      {/* Petit badge */}
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[#D4AF37]" />
+
+              <span className="text-xs font-semibold text-white/90">
+                Monastir · {congress.dates}
+              </span>
+            </div>
+
+            {/* Titre */}
+<h1 className="max-w-3xl font-serif text-5xl font-semibold leading-[1.05] tracking-[-0.02em] text-white drop-shadow-2xl sm:text-6xl lg:text-[4.5rem]">             <>
+  <span className="block text-[#D4AF37]">Les Assises</span>
+  <span className="block text-white">de l’Orthodontie</span>
+  <span className="mt-2 block text-4xl font-light tracking-[0.18em] text-white/90 sm:text-5xl">
+    2026
+  </span>
+</>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-white/85 sm:text-">
-              Join a premium congress experience in a seaside destination atmosphere.
+
+            {/* Description */}
+            <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-white/75 lg:mx-0">
+              Unissons nos forces pour une orthodontie d’excellence.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link to="/register" className="btn-primary">
-                {congress.cta}
+
+            {/* Boutons */}
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+              <Link
+                to="/registration"
+                className="gold-button group inline-flex items-center justify-center gap-4 rounded-xl px-7 py-4 text-sm font-extrabold text-[#111827] shadow-xl"
+              >
+                <span>{congress.cta || "Inscrivez-vous maintenant"}</span>
+
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </Link>
-              <Link to="/program" className="btn-secondary">
-                View program
+
+              <Link
+                to="/program"
+                className="secondary-button group inline-flex items-center justify-center gap-4 rounded-xl border border-white/20 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur-md"
+              >
+                <span>Voir le programme</span>
+
+                <span className="text-[#D4AF37] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  ↗
+                </span>
               </Link>
             </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/65">
-                  Dates
-                </p>
-                <p className="mt-3 text-xl font-bold">{congress.dates}</p>
+
+            {/* Informations */}
+            <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">
+              <div className="info-box flex items-center gap-4 rounded-xl border border-white/15 bg-white/[0.07] p-4 backdrop-blur-md">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#D4AF37]/50 bg-[#D4AF37]/10 text-xs font-bold text-[#E8C75A]">
+                  01
+                </div>
+
+                <div className="text-left">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/45">
+                    Dates
+                  </p>
+
+                  <p className="mt-1 text-sm font-bold text-white">
+                    {congress.dates}
+                  </p>
+                </div>
               </div>
-              <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/65">
-                  Location
-                </p>
-                <p className="mt-3 text-xl font-bold">{congress.hotel}</p>
+
+              <div className="info-box flex items-center gap-4 rounded-xl border border-white/15 bg-white/[0.07] p-4 backdrop-blur-md">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#D4AF37]/50 bg-[#D4AF37]/10 text-xs font-bold text-[#E8C75A]">
+                  02
+                </div>
+
+                <div className="text-left">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/45">
+                    Lieu
+                  </p>
+
+                  <p className="mt-1 text-sm font-bold text-white">
+                    {congress.hotel}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-md rounded-[2rem] border border-white/25 bg-white/12 p-4 shadow-2xl shadow-slate-950/20 backdrop-blur-sm sm:p-6">
-            <img
-              src={congress.poster}
-              alt="ATREO congress poster"
-              className="w-full rounded-[1.5rem] shadow-2xl"
-            />
+          {/* Partie droite : carrousel */}
+          <div className="poster-area relative mx-auto w-full max-w-[480px]">
+            {/* Décoration derrière le cadre */}
+            <div className="absolute -left-8 top-10 h-16 w-24 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm" />
+
+            <div className="absolute -right-7 bottom-12 h-14 w-20 rotate-6 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#8F6B18] opacity-80" />
+
+            {/* Cadre principal */}
+            <div className="poster-frame relative rounded-[2rem] border border-white/20 bg-white/15 p-3 shadow-2xl shadow-black/50 backdrop-blur-xl">
+              <div className="relative overflow-hidden rounded-[1.5rem]">
+                <img
+                  key={currentImage}
+                  src={congress.posters[currentImage]}
+                  alt={`Affiche ATREO ${currentImage + 1}`}
+                  className="poster-image block h-[650px] w-full object-cover" />
+                <div className="absolute left-4 top-4 rounded-full bg-black/50 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                  Édition 2026
+                </div>
+
+                <div className="pointer-events-none absolute inset-0 rounded-[1.5rem] ring-1 ring-inset ring-white/15" />
+              </div>
+
+              {/* Navigation */}
+              <div className="mt-3 flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setCurrentImage((previousImage) =>
+                      previousImage === 0
+                        ? congress.posters.length - 1
+                        : previousImage - 1
+                    )
+                  }
+                  aria-label="Affiche précédente"
+                  className="carousel-arrow flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 font-bold text-white"
+                >
+                  ‹
+                </button>
+
+                <div className="flex items-center gap-2">
+                  {congress.posters.map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setCurrentImage(index)}
+                      aria-label={`Afficher l’affiche ${index + 1}`}
+                      className={`h-2 rounded-full transition-all duration-500 ${currentImage === index
+                          ? "w-8 bg-[#D4AF37]"
+                          : "w-2 bg-white/30 hover:bg-white/60"
+                        }`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setCurrentImage(
+                      (previousImage) =>
+                        (previousImage + 1) % congress.posters.length
+                    )
+                  }
+                  aria-label="Affiche suivante"
+                  className="carousel-arrow flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 font-bold text-white"
+                >
+                  ›
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Animations dans le même fichier */}
+        <style>{`
+    /* Espacement uniforme entre toutes les sections de la page */
+    .hero-section ~ .section-shell {
+      margin-top: 7rem;
+    }
+
+    /* Apparition de toutes les sections de bas en haut au défilement */
+    .section-shell.section-reveal {
+      opacity: 0;
+      transform: translateY(70px);
+      transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .section-shell.section-reveal.section-is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .hero-section ~ .section-shell {
+        margin-top: 4rem;
+      }
+    }
+
+    @keyframes heroBackgroundMovement {
+      from {
+        transform: scale(1.04);
+      }
+
+      to {
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes contentEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes posterEntrance {
+      from {
+        opacity: 0;
+        transform: translateX(45px) rotate(2deg) scale(0.94);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0) rotate(0) scale(1);
+      }
+    }
+
+    @keyframes posterChange {
+      from {
+        opacity: 0;
+        transform: scale(1.07);
+        filter: blur(4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes frameFloating {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes glowMovement {
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        opacity: 0.75;
+        transform: translate(30px, -20px) scale(1.15);
+      }
+    }
+
+    .hero-background {
+      animation: heroBackgroundMovement 20s ease-in-out infinite alternate;
+    }
+
+    .hero-content {
+      animation: contentEntrance 1s ease-out both;
+    }
+
+    .poster-area {
+      animation: posterEntrance 1.2s ease-out 0.15s both;
+    }
+
+    .poster-frame {
+      animation: frameFloating 6s ease-in-out 1.4s infinite;
+    }
+
+    .poster-image {
+      animation: posterChange 0.8s ease-out both;
+    }
+
+    .hero-glow {
+      animation: glowMovement 8s ease-in-out infinite;
+    }
+
+    .hero-glow-two {
+      animation: glowMovement 10s ease-in-out 1s infinite reverse;
+    }
+
+    .gold-button {
+      background: linear-gradient(
+        135deg,
+        #f3d675 0%,
+        #d4af37 48%,
+        #b88a1b 100%
+      );
+      box-shadow:
+        0 12px 30px rgba(212, 175, 55, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+    }
+
+    .gold-button:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.08);
+      box-shadow:
+        0 18px 40px rgba(212, 175, 55, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    .secondary-button,
+    .info-box,
+    .carousel-arrow {
+      transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .secondary-button:hover,
+    .info-box:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212, 175, 55, 0.45);
+      background-color: rgba(255, 255, 255, 0.13);
+    }
+
+    .carousel-arrow:hover {
+      transform: scale(1.08);
+      border-color: rgba(212, 175, 55, 0.55);
+      background-color: rgba(212, 175, 55, 0.18);
+    }
+
+    @media (max-width: 1023px) {
+      .poster-area {
+        margin-top: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .section-shell.section-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .hero-background,
+      .hero-content,
+      .poster-area,
+      .poster-frame,
+      .poster-image,
+      .hero-glow,
+      .hero-glow-two {
+        animation: none;
+      }
+    }
+      @keyframes welcomeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(70px) scale(0.96);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.welcome-card {
+  animation: welcomeReveal linear both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 35%;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.welcome-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(7, 26, 51, 0.25);
+}
+
+.welcome-photo {
+  transition: transform 1s ease;
+}
+
+.welcome-card:hover .welcome-photo {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-card {
+    animation: none;
+  }
+
+  .welcome-photo {
+    transition: none;
+  }
+}
+  @keyframes revealFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes revealFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes revealFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.97);
+    filter: blur(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.welcome-card {
+  animation-name: revealFromTop;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 35%;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.welcome-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(7, 26, 51, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-card {
+    animation: none;
+  }
+}
+  `}</style>
       </section>
 
 
       <section className="section-shell">
-        <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
-            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+<div className="welcome-card relative overflow-hidden rounded-[2.5rem] bg-[#071A33] shadow-2xl shadow-slate-900/15">          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-amber-400/15 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl" />
+
+          <div className="relative grid lg:grid-cols-[0.8fr_1.2fr]">
+            {/* Photo */}
+            <div className="relative min-h-[420px] overflow-hidden lg:min-h-[650px]">
               <img
                 src={presidentWelcome.image}
                 alt={presidentWelcome.name}
-                className="h-64 w-64 rounded-[2rem] object-cover border-4 border-white shadow-2xl sm:h-72 sm:w-72 lg:h-[340px] lg:w-[300px]"
-              />
+className="welcome-photo absolute inset-0 h-full w-full object-cover object-top"              />
 
-              <div className="mt-5">
-                <p className="text-2xl font-bold text-[var(--navy)] sm:text-3xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/10 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
+                <p className="text-2xl font-black text-white sm:text-3xl">
                   {presidentWelcome.name}
                 </p>
-                <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
-                  President of ATREO
+
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">
+                  Présidente de l’ATREO
                 </p>
               </div>
             </div>
 
-            <div className="space-y-5">
-              <SectionHeader
-                eyebrow={presidentWelcome.role}
-                title={presidentWelcome.title}
-              />
+            {/* Message */}
+            <div className="relative flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+              <div className="mb-7 flex items-center gap-4">
+                <span className="h-px w-12 bg-amber-300" />
 
-              <div className="rounded-[1.75rem] border border-slate-200 bg-white/85 p-6 shadow-sm sm:p-8">
-                <div className="space-y-5 text-[15px] leading-8 text-slate-700 sm:text-base">
+                <p className="text-xs font-bold uppercase tracking-[0.28em] text-amber-300">
+                  {presidentWelcome.role}
+                </p>
+              </div>
+
+              <h2 className="max-w-xl text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+                {presidentWelcome.title}
+              </h2>
+
+              <div className="mt-8 border-l border-amber-300/40 pl-5 sm:pl-7">
+                <div className="space-y-5 text-[15px] leading-8 text-slate-300 sm:text-base">
                   {presidentWelcome.message.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
+                    <p
+                      key={index}
+                      className={
+                        index === 0 ? "font-semibold italic text-white" : ""
+                      }
+                    >
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               </div>
+
+              <div className="mt-9 h-px w-24 bg-gradient-to-r from-amber-300 to-transparent" />
             </div>
           </div>
         </div>
       </section>
 
+
       <section className="section-shell">
-        <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
-            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+<div className="welcome-card welcome-card-1 relative overflow-hidden rounded-[2.5rem] bg-[#071A33] shadow-2xl shadow-slate-900/15">          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-amber-400/15 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl" />
+
+          <div className="relative grid lg:grid-cols-[0.8fr_1.2fr]">
+            {/* Photo */}
+            <div className="relative min-h-[420px] overflow-hidden lg:min-h-[650px]">
               <img
                 src={copresidentcongressWelcome.image}
                 alt={copresidentcongressWelcome.name}
-                className="h-64 w-64 rounded-[2rem] object-cover border-4 border-white shadow-2xl sm:h-72 sm:w-72 lg:h-[340px] lg:w-[300px]"
+                className="absolute inset-0 h-full w-full object-cover object-top"
               />
 
-              <div className="mt-5">
-                <p className="text-2xl font-bold text-[var(--navy)] sm:text-3xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/10 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
+                <p className="text-2xl font-black text-white sm:text-3xl">
                   {copresidentcongressWelcome.name}
                 </p>
-                <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
-                  President of EOS
+
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">
+Secrétaire adjointe de la Fédération Française d’Orthodontie 
                 </p>
               </div>
             </div>
 
-            <div className="space-y-5">
-              <SectionHeader
-                eyebrow={copresidentcongressWelcome.role}
-                title={copresidentcongressWelcome.title}
-              />
+            {/* Message */}
+            <div className="relative flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+              <div className="mb-7 flex items-center gap-4">
+                <span className="h-px w-12 bg-amber-300" />
 
-              <div className="rounded-[1.75rem] border border-slate-200 bg-white/85 p-6 shadow-sm sm:p-8">
-                <div className="space-y-5 text-[15px] leading-8 text-slate-700 sm:text-base">
+                <p className="text-xs font-bold uppercase tracking-[0.28em] text-amber-300">
+                  {copresidentcongressWelcome.role}
+                </p>
+              </div>
+
+              <h2 className="max-w-xl text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+                {copresidentcongressWelcome.title}
+              </h2>
+
+              <div className="mt-8 border-l border-amber-300/40 pl-5 sm:pl-7">
+                <div className="space-y-5 text-[15px] leading-8 text-slate-300 sm:text-base">
                   {copresidentcongressWelcome.message.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
+                    <p
+                      key={index}
+                      className={
+                        index === 0 ? "font-semibold italic text-white" : ""
+                      }
+                    >
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               </div>
+
+              <div className="mt-9 h-px w-24 bg-gradient-to-r from-amber-300 to-transparent" />
             </div>
           </div>
         </div>
@@ -155,43 +672,11 @@ export default function HomePage() {
 
 
 
-      <section className="section-shell">
-        <div className="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
-            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <img
-                src={presidentcongressWelcome.image}
-                alt={presidentcongressWelcome.name}
-                className="h-64 w-64 rounded-[2rem] object-cover border-4 border-white shadow-2xl sm:h-72 sm:w-72 lg:h-[340px] lg:w-[300px]"
-              />
 
-              <div className="mt-5">
-                <p className="text-2xl font-bold text-[var(--navy)] sm:text-3xl">
-                  {presidentcongressWelcome.name}
-                </p>
-                <p className="mt-1 text-base font-medium text-slate-500 sm:text-lg">
-                  Congress President
-                </p>
-              </div>
-            </div>
 
-            <div className="space-y-5">
-              <SectionHeader
-                eyebrow={presidentcongressWelcome.role}
-                title={presidentcongressWelcome.title}
-              />
 
-              <div className="rounded-[1.75rem] border border-slate-200 bg-white/85 p-6 shadow-sm sm:p-8">
-                <div className="space-y-5 text-[15px] leading-8 text-slate-700 sm:text-base">
-                  {presidentcongressWelcome.message.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
 
 
 
@@ -200,7 +685,7 @@ export default function HomePage() {
 
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeader eyebrow="Speakers" title="Meet Our Speakers" />
+          <SectionHeader eyebrow="Nos conférenciers" title="Découvrez nos conférenciers" />
 
         </div>
         <div className="flex justify-center">
@@ -224,7 +709,7 @@ export default function HomePage() {
 
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeader eyebrow="Sponsors" title="Our Sponsors" />
+          <SectionHeader eyebrow="Sponsors" title="Nos sponsors" />
         </div>
         <div className="flex justify-center">
           {imageSponsor.map((sponsor) => (
@@ -234,7 +719,7 @@ export default function HomePage() {
 
         <div className="flex justify-center mt-8">
           <Link to="/sponsors" className="btn-primary mt-8">
-            Full list of sponsors
+            Liste complète de nos sponsors
           </Link>
         </div>
 
@@ -270,51 +755,33 @@ export default function HomePage() {
 
 
 
-
 <section className="section-shell">
-  <div className="marble-bg glass-card p-6 sm:p-10">
-    
-    <SectionHeader
-      eyebrow="Program"
-      title="Scientific Program"
-    />
+  <SectionHeader
+    eyebrow="Programme"
+    title="Programme scientifique"
+  />
 
-    {/* GRID PROGRAMMES */}
-    <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {programmeDays.map((day) => (
-        <div key={day.id} className="space-y-4">
-          
-          {/* CARREAU INFO */}
-          <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-5 shadow-sm">
-            <p className="font-bold text-[var(--navy)] text-lg">
-              {day.label}
-            </p>
-
-            <p className="mt-1 text-sm text-slate-600">
-              {day.highlights[0]}
-            </p>
-          </div>
-
-          {/* IMAGE */}
-          <div className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-lg shadow-slate-200/60">
-            <img
-              src={day.image}
-              alt={day.label}
-              className="h-[420px] w-full rounded-[1.25rem] object-cover"
-            />
-          </div>
-
+  <div className="mt-8 grid gap-6 sm:grid-cols-2">
+    {programmeDays.map((day) => (
+      <div key={day.id}>
+        <div className="overflow-hidden rounded-xl shadow-lg">
+          <img
+            src={day.image}
+            alt={`Programme scientifique — ${day.label}`}
+            className="h-auto w-full"
+          />
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
 
-    {/* BUTTON */}
-    <div className="mt-10 flex justify-center">
-      <Link to="/program" className="btn-primary">
-        Full congress program
-      </Link>
-    </div>
-
+  <div className="mt-7 flex justify-center">
+    <a
+      href="/programme"
+      className="inline-flex items-center rounded-full bg-[var(--gold)] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
+    >
+      Voir le programme complet
+    </a>
   </div>
 </section>
 
@@ -329,11 +796,9 @@ export default function HomePage() {
 
 
 
-
-
       <section className="section-shell space-y-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeader eyebrow="Accomodation" title="Registration and Accomodation" />
+          <SectionHeader eyebrow="Hébergement" title="Inscription et hébergement" />
         </div>
         <div className="flex justify-center">
           {tarifCongress.map((accomodation) => (
@@ -343,13 +808,9 @@ export default function HomePage() {
       </section>
 
 
-    </div>
+    </>
   );
 }
-
-
-
-
 
 
 

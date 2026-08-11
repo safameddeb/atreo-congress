@@ -1,39 +1,37 @@
-import beach from "../assets/beach.jpg";
+import beach from "../assets/beach.png";
 import poster from "../assets/poster.png";
+import poster1 from "../assets/poster1.png";
+import poster2 from "../assets/poster2.jpg";
+import poster3 from "../assets/poster3.png";
+
 import speakerWall from "../assets/speaker-wall.jpg";
 import programPreCongress from "../assets/program-pre-congress.jpg";
 import programDay1 from "../assets/program-day-1.jpg";
 import programDay2 from "../assets/program-day-2.jpg";
 import sponsorsBoard from "../assets/sponsors-board.png";
 import logos from "../assets/atreo-eos-logos.jpg";
-import patrice from "../assets/patrice.jpg";
-import romain from "../assets/DR ROMAIN RADJEI.png";
-import ambre from "../assets/ambra.jpeg";
-import abdelhakim from "../assets/abdelhakim gheriani.png";
-import vittorio from "../assets/dr-Vittorio-Cacciafesta.jpg";
-import fethi from "../assets/FETHI JEBRI.jpeg";
-import ignacio from "../assets/ignacio.png";
-import ilyes from "../assets/ILYES TIBAOUI.png";
-import jean from "../assets/jean.png";
-import khaled from "../assets/khaled.png";
-import mulhim from "../assets/mulhim duirieh.jpeg";
-import rafika from "../assets/RAFIKA HARMIM.jpg";
-import medsalah from "../assets/medsalah.jpg";
-import ramzi from "../assets/RAMZI HADDED.png";
-import lisette from "../assets/lisette.jpg";
-import maria from "../assets/maria.jpg";
-import tunis from "../assets/tunis.png";
-import jam from "../assets/jam.png";
 
-import skandar from "../assets/skandar ellouze.jpg";
-import salvadorromero from "../assets/WhatsApp Image 2026-03-17 at 05.57.50.jpeg";
+import imen from "../assets/imen bouallegue.jpg";
+import ons from "../assets/Zouiten Ons.jpg";
+import abdelhakim from "../assets/abdelhakim gheriani.png";
 import yamen from "../assets/YAAMEN LAABIDI.jpeg";
-import leticia from "../assets/leticia.jpg";
-import zouhair_abidine from "../assets/ZOUHAIR ABIDINE.png";
-import zouhair_meskini from "../assets/zouhair meskini.png";
+import mulhim from "../assets/mulhim duirieh.jpeg";
+import guillaume from "../assets/guillaume.jpg";
+import hamza from "../assets/hamza.jpg";
+import jed from "../assets/jad.jpg";
+import mehdi from "../assets/mehdi.jpg";
+import benattia from "../assets/ben attia.jpg";
+import amina from "../assets/amina.jpeg";
+import wiem from "../assets/wiem.jpeg";
+import mohamed from "../assets/mohamed.png";
+import fethi from "../assets/FETHI JEBRI.jpeg";
+import ines from "../assets/ines boudali.jpeg";
+
+
+
 import presidentPhoto from "../assets/president.jpg";
 import angelAligner from "../assets/sponsors/angel aligner.png";
-import sponsorimg from "../assets/sponsors/sponsorimg.jpg";
+import sponsorimg from "../assets/sponsors/sponsorimg.png";
 import basdiag from "../assets/sponsors/basdiag.jpg";
 import diamond from "../assets/sponsors/diamond.png";
 import expressMedical from "../assets/sponsors/express medical.png";
@@ -51,13 +49,12 @@ import dentamed from "../assets/sponsors/dentamed.png";
 import zeidoun from "../assets/sponsors/zeidoun.png";
 import zeidoun2 from "../assets/sponsors/zeidoun2.png";
 import handsom from "../assets/sponsors/handsom.png";
-import mot from "../assets/sponsors/mot.jpg";
 import mdc from "../assets/sponsors/mdc.jpg";
 import ourspeakers from "../assets/ourspeakers.jpg";
 import advanced from "../assets/sponsors/advanced.png";
 import gala from "../assets/gala.png";
 import tarif from "../assets/tarif.png";
-import medchalabi from "../assets/medchalabi.jpeg";
+import imene from "../assets/imene.png";
 import tunisie from "../assets/flags/tunisia.png";
 import algerie from "../assets/flags/algerie.png";
 import egypt from "../assets/flags/egypt.png";
@@ -73,16 +70,15 @@ import marroc from "../assets/flags/marroc.png";
 
 
 
-
 export const congress = {
-  title: "11th International Orthodontic Congress",
-  subtitle: "ATREO International Orthodontic Congress",
-  theme: "Sun, Sea & Smiles",
-  dates: "12–13–14 June 2026",
-  hotel: "Royal Tulip Taj Sultan, Hammamet",
-  cta: "Register now",
+  title: "Les Assises de l’Orthodontie 2026",
+  subtitle: "Les Assises de l’Orthodontie 2026",
+  theme: "",
+  dates: "23-24 octobre 2026",
+  hotel: "Royal Thalassa, Monastir",
+  cta: "Inscrivez-vous maintenant",
   homeBackground: beach,
-  poster,
+  posters: [poster, poster1, poster2, poster3],
   logos,
   speakerWall,
   contactEmail: "atreocongress2026@gmail.com",
@@ -94,415 +90,374 @@ export const congress = {
 
 export const imageSpeakers = [
   {
-
     image: ourspeakers,
   },
-]
+];
+
 export const imageSponsor = [
   {
-
     image: sponsorimg,
   },
-]
+];
 
 export const dinnerGala = [
   {
-
     image: gala,
   },
-]
+];
 
 export const tarifCongress = [
   {
     image: tarif,
   },
-]
+];
 
 export const keynoteSpeakers = [
-
-
   {
     name: "Dr. Abdelhakim Elgheriani",
-    nationality: "United Arab Emirates",
+    nationality: "Émirats arabes unis",
     flag: "🇦🇪",
     image: abdelhakim,
   },
   {
     name: "Dr. Yamen Labidi",
-    nationality: "Tunisia",
+    nationality: "Tunisie",
     flag: "🇹🇳",
     image: yamen,
   },
   {
     name: "Dr. Mulhem Dumirieh",
-    nationality: "Syria",
+    nationality: "Syrie",
     flag: "🇸🇾",
     image: mulhim,
   },
-
 ];
 
 export const speakers = [
-
   {
-    name: "Dr. Abdelhakim Elgheriani",
-    nationality: "United Arab Emirates",
-    flag: emirates,
-    image: abdelhakim,
+    name: "Dr. Wiem Ben Amor",
+    nationality: "tunisie",
+    flag: tunisie,
+    image: wiem,
+    conferenceTitle:
+      "Titre de sa conférence",
+
+    summary:
+ "Le résumé de la conférence sera bientôt disponible."
   },
-
   {
-    name: "Dr. Skandar Ellouze",
+    name: "Dr. imen Bouallégue",
     nationality: "Tunisia",
     flag: tunisie,
-    image: skandar,
-  },
-  {
-    name: "Dr. Mulhem Dumirieh",
-    nationality: "Syria",
-    flag: syria,
-    image: mulhim,
-  },
-  {
-    name: "Dr. Vittorio Cacciafesta",
-    nationality: "Italy",
-    flag: italy,
-    image: vittorio,
-  },
-  {
-    name: "Dr. María Hernández Vilarrasa",
-    nationality: "Spain",
-    flag: spain,
-    image: maria,
-  },
-  {
-    name: "Dr. Fethi Jebri",
-    nationality: "Tunisia",
-    flag: tunisie,
-    image: fethi,
-  },
-  {
-    name: "Dr. Ramzi Hadded",
-    nationality: "Lebanon",
-    flag: lebanon,
-    image: ramzi,
-  },
-  {
-    name: "Dr. Ilyes Tibaoui",
-    nationality: "Algeria",
-    flag: algerie,
-    image: ilyes,
-  },
-  {
-    name: "Dr. LetiZia Perillo",
-    nationality: "Italy",
-    flag: italy,
-    image: leticia,
-  },
-  {
-    name: "Dr. Yamen Labidi",
-    nationality: "Tunisia",
-    flag: tunisie,
-    image: yamen,
-  },
+    image: imen,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+    "Bien que regroupant des formes anatomo cliniques variables, les fentes faciales, malformation cranio faciale la plus fréquente, entrainent systématiquement un triple retentissement : esthétique, fonctionnel et psychologique nécessitant une prise en charge transdisciplinaire raisonnée et raisonnable depuis la naissance à l’âge adulte.  Dans ce cadre, la prise en charge orthopédique et orthodontique est capitale, plus particulièrement auprès des patients porteurs de fentes labio-palatines, forme clinique bien que plurielle, la plus impactée au niveau osseux et dentaire avec une croissance maxillo faciale nécessairement perturbée se manifestant par une hypomaxillie d’intensité variable selon l’impact des effets iatrogènes liés aux chirurgies primaire et secondaire, selon  le type de fente , selon la valeur du défect osseux initial et selon la présence d’une association syndromique ou non. Cette préparation va inclure une préparation orthopédique pré chirurgicale transversale en vue d’une gingivoperiosteoplastie associée à une greffe osseuse alvéolaire , parfaitement codifiée tant en termes de timing , que de dispositifs, que d’objectifs de traitement mais se heurte souvent , secondairement,  à un déficit sagittal dans un contexte dentaire souvent appauvri et parodontal vulnérable. A la lumière du protocole mis en place par le Centre de référence des maladies rares (MAFACE) en France , fruit d’années de recherches en associant l’expertise des professionnels de santé venant de spécialités différentes mais toutes impliquées et coordonnées, il est désormais possible d’optimiser les étapes, de faciliter le parcours de soins et d’améliorer la qualité de vie des enfants, entourés par leurs familles. Nous nous proposons à travers une communication clinique, basée sur les dernières recommandations   d’apporter un éclairage sur les particularités squelettiques et dentaires ,  de préciser les éléments de réflexion et les principaux critères décisionnels pour une prise en charge orthodontique et orthopédique optimale et stratégique dans l’intérêt des patients ayant pour but de restaurer un contexte anatomique favorable à l’établissement des fonctions , esthétique favorable à l’amélioration de l’estime de soi sans porter préjudice à une prise en charge idéale en fin de croissance ni alourdir la charge thérapeutique. ",
+},
 
   {
-    name: "Dr. Ignacio Arcos Palomino",
-    nationality: "Spain",
-    flag: spain,
-    image: ignacio,
-  },
-  {
-    name: "Dr. Jean-François Ernoult",
-    nationality: "France",
-    flag: france,
-    image: jean,
-  },
-  {
-    name: "Dr. Rafika Harmim",
-    nationality: "Algeria",
-    flag: algerie,
-    image: rafika,
-  },
-  {
-    name: "Dr. Khaled Aboulazm",
-    nationality: "Egypt",
-    flag: egypt,
-    image: khaled,
-  },
-
-
-  {
-    name: "Dr. Salvador Romero",
-    nationality: "Mexico",
-    flag: mexico,
-    image: salvadorromero,
-  },
-  {
-    name: "Dr. Zouhair Abidine",
-    nationality: "Morocco",
-    flag: marroc,
-    image: zouhair_abidine,
-  },
-  {
-    name: "Dr. Ambra Michelotti",
-    nationality: "Italy",
-    flag: italy,
-    image: ambre,
-  },
-  {
-    name: "Dr. Romain Radjei",
-    nationality: "France",
-    flag: france,
-    image: romain,
-  },
-  {
-    name: "Dr. Patrice Bergeyron",
-    nationality: "Switzerland",
-    flag: suisse,
-    image: patrice,
-  },
-  {
-    name: "Dr. Zouhair Meskini",
-    nationality: "Tunisia",
+    name: "Dr. Ons Zouiten",
+    nationality: "Tunisie",
     flag: tunisie,
-    image: zouhair_meskini,
-  },
-  {
-    name: "Dr. Lisette Rodrigues",
-    nationality: "Spain",
-    flag: spain,
-    image: lisette,
-  },
-  {
-    name: "Dr. Mohammed Saleh",
-    nationality: "United Arab Emirates",
-    flag: emirates,
-    image: medsalah,
-  },
+    image: ons,
+
+    
+  conferenceTitle: "Peut-on déplacer toutes les dents ? Le regard du parodontiste.",
+
+  summary:
+    "L'augmentation du nombre des patients adultes souhaitant bénéficier d'un traitement orthodontique confronte aujourd'hui les praticiens à une problématique de plus en plus fréquente : peut-on déplacer une dent présentant une perte d'attache parodontale sans compromettre son pronostic ? Si le traitement orthodontique constitue un outil précieux pour restaurer la fonction et l'esthétique chez les patients atteints de parodontite, il ne peut être envisagé qu'après une évaluation parodontale rigoureuse et l'obtention d'une véritable stabilité de la maladie. À partir de la classification parodontale de 2018 et des recommandations cliniques de l'EFP de 2022, cette conférence proposera une approche clinique centrée sur le diagnostic, l'identification des situations à risque et la stratégie thérapeutique à adopter. ",
+},
+{
+  name: "Dr. Yamen Labidi",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: yamen,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+{
+  name: "Dr. Hamza Ben Aissa ",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: hamza,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+{
+  name: "Dr. Guillaume Joseph ",
+  nationality: "France",
+  flag: france,
+  image: guillaume,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+{
+  name: "Dr. Amina Ben Salem ",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: amina,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+{
+  name: "Dr. Mehdi Sersab",
+  nationality: "France",
+  flag: france,
+  image: mehdi,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+{
+  name: "Dr. Mohamed Ben Romdhane",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: mohamed,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+{ name: "Dr. Ines Boudali",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: ines,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+{ name: "Dr. Jed Bouguila",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: jed,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
 ];
-
 
 export const programmeDays = [
   {
     id: "day-0",
-    label: "Friday 12 June",
-    image: programPreCongress,
+    label: "Vendredi 23 octobre",
+    image: programDay1,
     highlights: [
-      "Pre-Congress",
+      "Premier jour des Assises de l’Orthodontie",
     ],
   },
   {
     id: "day-1",
-    label: "Saturday 13 June",
-    image: programDay1,
-    highlights: [
-      "Congress day 1",
-    ],
-  },
-
-  {
-    id: "day-2",
-    label: "Sunday 14 June",
+    label: "Samedi 24 octobre",
     image: programDay2,
     highlights: [
-      "Congress day 2",
-
-    ],
-  },
-  {
-    id: "day-6",
-    label: "Saturday 13 June",
-    image: gala,
-    highlights: [
-      "Diner Gala: 13 june 2026 - 20H",
-    ],
-  },
-
-  {
-    id: "day-3",
-    label: "Monday 15 June",
-    image: jam,
-    highlights: [
-      "Kairouan - ElJem",
-
-    ],
-  },
-  {
-    id: "day-4",
-    label: "Tuesday 16 June",
-    image: tunis,
-    highlights: [
-      "Medina - Carthage - Sidi Bousaid",
-
-    ],
-  },
-  {
-    id: "day-5",
-    label: "Registration and Accomodation ",
-    image: tarif,
-    highlights: [
-      "Registration fees",
-
+      "Deuxième jour des Assises de l’Orthodontie",
     ],
   },
 ];
 
 export const sponsorTiers = [
   {
-    name: "Gold",
+    name: "Or",
     description:
-      "Premium visibility on the congress website, key sponsor placements, and stage mention.",
+      "Visibilité premium sur le site du congrès, emplacements privilégiés et mention sur scène.",
   },
   {
-    name: "Platinum",
+    name: "Platine",
     description:
-      "Logo presence across event materials and the official congress sponsor area.",
+      "Présence du logo sur les supports de l’événement et dans l’espace officiel réservé aux sponsors du congrès.",
   },
   {
-    name: "Silver",
+    name: "Argent",
     description:
-      "Highlighted placement in sponsor showcases, collateral support, and branded exposure.",
+      "Emplacement mis en valeur dans les présentations des sponsors, supports promotionnels et visibilité de la marque.",
   },
-
 ];
 
 export const sponsorsPreview = sponsorsBoard;
 
-
 export const registerFields = [
-  { name: "firstName", label: "First name", type: "text", required: true },
-  { name: "lastName", label: "Last name", type: "text", required: true },
-  { name: "email", label: "Email", type: "email", required: true },
-  { name: "phone", label: "Phone", type: "tel", required: true },
-  { name: "speciality", label: "Speciality", type: "text", required: true },
-  { name: "country", label: "Country", type: "text", required: true },
-  { name: "city", label: "City", type: "text", required: true },
+  {
+    name: "firstName",
+    label: "Prénom",
+    type: "text",
+    required: true,
+  },
+  {
+    name: "lastName",
+    label: "Nom",
+    type: "text",
+    required: true,
+  },
+  {
+    name: "email",
+    label: "Email",
+    type: "email",
+    required: true,
+  },
+  {
+    name: "phone",
+    label: "Téléphone",
+    type: "tel",
+    required: true,
+  },
+  {
+    name: "speciality",
+    label: "Spécialité",
+    type: "text",
+    required: true,
+  },
+  {
+    name: "country",
+    label: "Pays",
+    type: "text",
+    required: true,
+  },
   {
     name: "workshop",
-    label: "Select Workshop (Optional) —  ⚠️Dr. Mulhim Dumirieh's Workshop is fully booked.",
+    label: "Sélectionnez un atelier (facultatif)",
     type: "select",
     required: false,
     multiple: true,
     options: [
-      { value: "Dr. Lisette Rodriguez", label: "Dr. Lisette Rodriguez: Workshop GRAPHY (Price 150DT)" },
-      // Workshop complet
-      // Dr. Mulhim Dumirieh: Miniscrew-Assisted Orthodontics: Elevating Treatment Excellence (COMPLET)
-      { value: "Dr. Patrice Bergeyron", label: "Dr. Patrice Bergeyron: Orthodontic Aesthetics into Digital Treatment Planning with Basdiag Software (Price 200DT)" },
+      {
+        value: "Dr. Lisette Rodriguez",
+        label:
+          "Dr. Lisette Rodriguez : Atelier GRAPHY (Tarif : 150 DT)",
+      },
+
+      // Atelier complet
+      // Dr. Mulhim Dumirieh : Orthodontie assistée par mini-vis :
+      // élever l’excellence du traitement (COMPLET)
+
+      {
+        value: "Dr. Patrice Bergeyron",
+        label:
+          "Dr. Patrice Bergeyron : Intégration de l’esthétique orthodontique dans la planification numérique du traitement avec le logiciel Basdiag (Tarif : 200 DT)",
+      },
     ],
   },
   {
-  name: "galaDinner",
-  label: "Gala Dinner Saturday 13 june (180DT)",
-  type: "select",
-  required: true,
-  options: [
-    { value: "Yes", label: "Yes" },
-    { value: "No", label: "No" },
-  ],
-},
-
+    name: "galaDinner",
+    label: "Dîner de gala (180 DT)",
+    type: "select",
+    required: true,
+    options: [
+      {
+        value: "Yes",
+        label: "Oui",
+      },
+      {
+        value: "No",
+        label: "Non",
+      },
+    ],
+  },
+  {
+    name: "status",
+    label: "Statut professionnel",
+    type: "select",
+    required: true,
+    options: [
+      {
+        value: "Doctor",
+        label: "Docteur",
+      },
+      {
+        value: "Resident",
+        label: "Résident(e)",
+      },
+    ],
+  },
   {
     name: "payment",
-    label: "Select Payment Method",
+    label: "Sélectionnez le mode de paiement",
     type: "select",
     required: true,
     options: [
-      { value: "Cash (same day)", label: "Cash (same day)" },
-      { value: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)", label: "Bank transfer (RIB: 08 503 00023 20 11017 6 47)" },
+      {
+        value: "Cash (same day in TND)",
+        label: "Paiement en espèces sur place (en TND)",
+      },
+      {
+        value:
+          "Bank transfer (Available for TND payments only) – RIB: 08 503 00023 20 11017 6 47",
+        label:
+          "Virement bancaire (en TND uniquement) – RIB : 08 503 00023 20 11017 6 47",
+      },
     ],
   },
-
-  {
-    name: "size",
-    label: "Select T-shirt size",
-    type: "select",
-    required: true,
-    options: [
-      { value: "S (Small)", label: "S (Small)" },
-      { value: "M (Medium)", label: "M (Medium)" },
-      { value: "L (Large)", label: "L (Large)" },
-      { value: "XL (Extra large)", label: "XL (Extra large)" },
-    ],
-  }
 ];
+
 export const presidentWelcome = {
-  role: "ATREO President’s Message",
+  role: "Mot de la Présidente de l’ATREO",
   name: "Dr Amel Ben Brahim",
-  title: "Welcome to the 11th ATREO Congress",
+  title: "Bienvenue aux Assises de l’Orthodontie 2026",
   image: presidentPhoto,
   message: [
-    "Dear colleagues, dear friends,",
-    "It is with great pleasure that we welcome you to the ATREO Congress, held on June 13–14 in Hammamet, in collaboration with the Emirates Orthodontic Society (EOS).",
-    "This scientific event will provide a valuable opportunity for exchange, sharing of experiences, and enrichment around the latest advances in orthodontics.",
-    "We are honored to bring together renowned speakers and a committed community driven by a passion for our discipline.",
-    "Beyond the scientific sessions, this congress is also intended to be a moment of conviviality and meaningful encounters.",
-    "We wish you an excellent congress and a pleasant stay with us.",
+    "Chères Consœurs, Chers Confrères, Chers Partenaires et Amis de l’Orthodontie,",
 
+"C’est avec un immense plaisir que je vous souhaite la bienvenue aux Assises de l’Orthodontie 2026, qui se tiendront les 23 et 24 octobre 2026 à l’Hôtel Royal Thalassa Monastir, autour du thème : \« Unissons nos forces pour une orthodontie d’excellence. \»",
 
-  ],
-};
+"Organisées par l’Association Tunisienne de Recherche et d’Étude en Orthodontie (ATREO), en collaboration avec le Groupe d’Orthodontie 3D et les Services d’Orthopédie Dento-Faciale de Monastir et de Sousse, ces Assises se veulent un espace privilégié de partage, de réflexion et d’échanges autour des avancées de notre discipline.",
 
+"Nous sommes honorés de réunir des conférenciers de renom ainsi qu’une communauté passionnée et engagée. La richesse des expériences partagées et la diversité des approches contribueront, sans aucun doute, à faire progresser notre pratique et à renforcer les liens qui nous unissent.",
 
-export const presidentcongressWelcome = {
-  role: "Congress President’s Message",
-  name: "Dr Yamen Laabidi",
-  title: "Welcome to the 11th ATREO Congress",
-  image: yamen,
-  message: [
+"Au-delà de leur dimension scientifique, ces Assises seront également un moment de convivialité, de rencontres et de collaboration, dans le cadre exceptionnel de la ville de Monastir.",
 
-    "In recent years, orthodontics has undergone a remarkable transformation, driven by significant clinical and technological advancements.",
-
-    "These developments are the result of years of clinical research and technical innovation, led by talented clinicians whose creativity and ingenuity continue to push the boundaries of conventional orthodontics.",
-
-    "We invite you to join us in celebrating these achievements and the evolution of our specialty at the ATREO Annual Congress. We will have the pleasure of welcoming a distinguished panel of speakers, eager to share their clinical expertise and experience.",
-
-    "This event will also be a wonderful opportunity to strengthen the Tunisian–Emirati friendship in an exceptional setting.",
-
-    "We look forward to seeing you on June 13th and 14th for two days of exchange and knowledge sharing.",
-
-
-
-
-  ],
+"Je vous souhaite à toutes et à tous d’excellentes Assises, riches en découvertes et en échanges, ainsi qu’un agréable séjour parmi nous.",
+ ],
 };
 
 
 export const copresidentcongressWelcome = {
-  role: "EOS President’s Message",
-  name: "Dr Mohammed Mahmoud Al Shalabi",
-  title: "Welcome to the 11th ATREO Congress",
-  image: medchalabi,
+  role: "Mot du --------------------------",
+  name: "Dr Imen BOUALLEGUE",
+  title: "Bienvenue aux Assises de l’Orthodontie",
+  image: imene,
   message: [
-    "Dear colleagues, dear friends,",
-
-    "It is a great honor and pleasure to welcome you to the 11th ATREO Congress in Hammamet. As Co-President of this meeting, I am particularly proud of the collaboration between the Emirates Orthodontic Society (EOS) and the Tunisian Association for Research and Studies in Orthodontics (ATREO) , working together to host this important scientific event.",
-
-    "This partnership reflects the strong professional ties within our orthodontic community and our shared commitment to advancing knowledge, fostering collaboration, and supporting excellence in orthodontic care. In collaboration with the Emirates Orthodontic Society , this congress brings together distinguished speakers and colleagues to discuss the latest developments and innovations in our field.",
-
-    "Beyond the scientific sessions, we hope this meeting will also create opportunities for meaningful dialogue, new friendships, and lasting professional connections.",
-
-    "I wish you all a successful and inspiring congress and a pleasant stay in beautiful Hammamet.",
-
-
+    "Chers collègues, chers amis,",
   ],
 };
 
-
-
 export const sponsorGroups = [
   {
-    tier: "Gold Sponsors",
+    tier: "Sponsors Or",
     logos: [
       { name: "Newmed", image: newmed },
       { name: "invisalign", image: invisalign },
       { name: "diamond", image: diamond },
       { name: "angelAligner", image: angelAligner },
-
     ],
   },
   {
-    tier: "Platinum Sponsors",
+    tier: "Sponsors Argent",
     logos: [
       { name: "orthopartner", image: orthopartner },
       { name: "Nagati", image: nagati },
@@ -510,12 +465,10 @@ export const sponsorGroups = [
       { name: "zeidoun2", image: zeidoun2 },
       { name: "Express Medical", image: expressMedical },
       { name: "alignright", image: alignright },
-      { name: "mot", image: mot },
-
     ],
   },
   {
-    tier: "Silver Sponsors",
+    tier: "Sponsors Bronze",
     logos: [
       { name: "jasminaligners", image: jasminaligners },
       { name: "handsom", image: handsom },
@@ -527,7 +480,6 @@ export const sponsorGroups = [
       { name: "mdc", image: mdc },
       { name: "basdiag", image: basdiag },
       { name: "dentalbox", image: dentalbox },
-
     ],
   },
 ];
