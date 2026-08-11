@@ -78,7 +78,7 @@ export const congress = {
   hotel: "Royal Thalassa, Monastir",
   cta: "Inscrivez-vous maintenant",
   homeBackground: beach,
-  posters: [poster, poster1, poster2, poster3],
+  posters: [poster],
   logos,
   speakerWall,
   contactEmail: "atreocongress2026@gmail.com",
@@ -339,46 +339,7 @@ export const registerFields = [
     type: "text",
     required: true,
   },
-  {
-    name: "workshop",
-    label: "Sélectionnez un atelier (facultatif)",
-    type: "select",
-    required: false,
-    multiple: true,
-    options: [
-      {
-        value: "Dr. Lisette Rodriguez",
-        label:
-          "Dr. Lisette Rodriguez : Atelier GRAPHY (Tarif : 150 DT)",
-      },
 
-      // Atelier complet
-      // Dr. Mulhim Dumirieh : Orthodontie assistée par mini-vis :
-      // élever l’excellence du traitement (COMPLET)
-
-      {
-        value: "Dr. Patrice Bergeyron",
-        label:
-          "Dr. Patrice Bergeyron : Intégration de l’esthétique orthodontique dans la planification numérique du traitement avec le logiciel Basdiag (Tarif : 200 DT)",
-      },
-    ],
-  },
-  {
-    name: "galaDinner",
-    label: "Dîner de gala (180 DT)",
-    type: "select",
-    required: true,
-    options: [
-      {
-        value: "Yes",
-        label: "Oui",
-      },
-      {
-        value: "No",
-        label: "Non",
-      },
-    ],
-  },
   {
     name: "status",
     label: "Statut professionnel",

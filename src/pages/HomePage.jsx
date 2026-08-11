@@ -64,7 +64,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero-section relative min-h-screen overflow-hidden bg-[#071327]">
+<section className="hero-section relative min-h-screen overflow-hidden bg-[#071327]">
         {/* Arrière-plan */}
         <div
           className="hero-background absolute inset-0 bg-cover bg-center"
@@ -171,7 +171,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Partie droite : carrousel */}
+          {/* Partie droite : première affiche uniquement */}
           <div className="poster-area relative mx-auto w-full max-w-[480px]">
             {/* Décoration derrière le cadre */}
             <div className="absolute -left-8 top-10 h-16 w-24 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm" />
@@ -182,62 +182,14 @@ export default function HomePage() {
             <div className="poster-frame relative rounded-[2rem] border border-white/20 bg-white/15 p-3 shadow-2xl shadow-black/50 backdrop-blur-xl">
               <div className="relative overflow-hidden rounded-[1.5rem]">
                 <img
-                  key={currentImage}
-                  src={congress.posters[currentImage]}
-                  alt={`Affiche ATREO ${currentImage + 1}`}
-                  className="poster-image block h-[650px] w-full object-cover" />
+                  src={congress.posters[0]}
+                  alt="Affiche ATREO 1"
+                  className="block h-[650px] w-full object-cover" />
                 <div className="absolute left-4 top-4 rounded-full bg-black/50 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white backdrop-blur-md">
                   Édition 2026
                 </div>
 
                 <div className="pointer-events-none absolute inset-0 rounded-[1.5rem] ring-1 ring-inset ring-white/15" />
-              </div>
-
-              {/* Navigation */}
-              <div className="mt-3 flex items-center justify-between">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setCurrentImage((previousImage) =>
-                      previousImage === 0
-                        ? congress.posters.length - 1
-                        : previousImage - 1
-                    )
-                  }
-                  aria-label="Affiche précédente"
-                  className="carousel-arrow flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 font-bold text-white"
-                >
-                  ‹
-                </button>
-
-                <div className="flex items-center gap-2">
-                  {congress.posters.map((_, index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      onClick={() => setCurrentImage(index)}
-                      aria-label={`Afficher l’affiche ${index + 1}`}
-                      className={`h-2 rounded-full transition-all duration-500 ${currentImage === index
-                          ? "w-8 bg-[#D4AF37]"
-                          : "w-2 bg-white/30 hover:bg-white/60"
-                        }`}
-                    />
-                  ))}
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() =>
-                    setCurrentImage(
-                      (previousImage) =>
-                        (previousImage + 1) % congress.posters.length
-                    )
-                  }
-                  aria-label="Affiche suivante"
-                  className="carousel-arrow flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 font-bold text-white"
-                >
-                  ›
-                </button>
               </div>
             </div>
           </div>
@@ -305,31 +257,6 @@ export default function HomePage() {
       }
     }
 
-    @keyframes posterChange {
-      from {
-        opacity: 0;
-        transform: scale(1.07);
-        filter: blur(4px);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0);
-      }
-    }
-
-    @keyframes frameFloating {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
     @keyframes glowMovement {
       0%,
       100% {
@@ -353,14 +280,6 @@ export default function HomePage() {
 
     .poster-area {
       animation: posterEntrance 1.2s ease-out 0.15s both;
-    }
-
-    .poster-frame {
-      animation: frameFloating 6s ease-in-out 1.4s infinite;
-    }
-
-    .poster-image {
-      animation: posterChange 0.8s ease-out both;
     }
 
     .hero-glow {
@@ -396,8 +315,7 @@ export default function HomePage() {
     }
 
     .secondary-button,
-    .info-box,
-    .carousel-arrow {
+    .info-box {
       transition:
         transform 0.3s ease,
         background-color 0.3s ease,
@@ -409,12 +327,6 @@ export default function HomePage() {
       transform: translateY(-3px);
       border-color: rgba(212, 175, 55, 0.45);
       background-color: rgba(255, 255, 255, 0.13);
-    }
-
-    .carousel-arrow:hover {
-      transform: scale(1.08);
-      border-color: rgba(212, 175, 55, 0.55);
-      background-color: rgba(212, 175, 55, 0.18);
     }
 
     @media (max-width: 1023px) {
@@ -433,8 +345,6 @@ export default function HomePage() {
       .hero-background,
       .hero-content,
       .poster-area,
-      .poster-frame,
-      .poster-image,
       .hero-glow,
       .hero-glow-two {
         animation: none;
@@ -546,6 +456,35 @@ export default function HomePage() {
 }
   `}</style>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       <section className="section-shell">
