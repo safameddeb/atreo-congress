@@ -11,6 +11,8 @@ import programDay2 from "../assets/program-day-2.jpg";
 import sponsorsBoard from "../assets/sponsors-board.png";
 import logos from "../assets/atreo-eos-logos.jpg";
 
+
+
 import imen from "../assets/imen bouallegue.jpg";
 import ons from "../assets/Zouiten Ons.jpg";
 import abdelhakim from "../assets/abdelhakim gheriani.png";
@@ -26,6 +28,7 @@ import wiem from "../assets/wiem.jpeg";
 import mohamed from "../assets/mohamed.png";
 import fethi from "../assets/FETHI JEBRI.jpeg";
 import ines from "../assets/ines boudali.jpeg";
+import homme from "../assets/homme.png";
 
 
 
@@ -194,10 +197,33 @@ export const speakers = [
 },
 
 {
-  name: "Dr. Guillaume Joseph ",
+  name: "Dr. Guillaume Lecocq ",
   nationality: "France",
   flag: france,
   image: guillaume,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+{
+  name: "Dr. Clement Frindel ",
+  nationality: "France",
+  flag: france,
+  image: homme,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+{
+  name: "Dr. Lisa Lecocq ",
+  nationality: "France",
+  flag: france,
+  image: homme,
 
   conferenceTitle: "Titre de sa conférence",
 
@@ -398,13 +424,29 @@ export const presidentWelcome = {
 
 
 export const copresidentcongressWelcome = {
-  role: "Mot du --------------------------",
-  name: "Dr Imen BOUALLEGUE",
+  role: "Mot du Dr Imen BOUALLÈGUE",
+  name: "Dr Imen BOUALLÈGUE",
   title: "Bienvenue aux Assises de l’Orthodontie",
   image: imene,
   message: [
     "Chers collègues, chers amis,",
-  ],
+
+    "C’est avec un immense bonheur que nous vous retrouverons, en ce début d’automne, sous le doux soleil de Monastir, pour échanger dans un esprit de perfectionnisme, de bienveillance et d’humilité, guidés par une seule passion : une orthodontie d’excellence.",
+
+    "Les Assises de l’Orthodontie, qui se tiendront les 23 et 24 octobre 2026, réuniront des conférenciers talentueux, généreux et passionnés. Elles nous permettront d’approfondir les soins interceptifs en orthopédie dento-faciale, la prise en charge orthodontique des patients à besoins spécifiques, ainsi que l’optimisation du parcours patient grâce aux techniques modernes. Elles aborderont également la maîtrise des traitements destinés aux patients adultes souhaitant une prise en charge discrète, dans un cadre parodontal sécurisé.",
+
+    "Car l’orthodontie ne se résume pas à l’alignement dentaire.",
+
+    "Car, au-delà de l’amélioration esthétique, l’orthodontie apporte une véritable réhabilitation fonctionnelle.",
+
+    "Car l’orthodontie ne se pratique pas seul dans son cabinet, mais nécessite une réflexion et une prise en charge transdisciplinaires.",
+
+    "Car l’orthodontie reste avant tout une discipline médicale complexe et complète.",
+
+    "L’ATREO, le service d’Orthopédie Dento-Faciale de Monastir, le service d’Orthopédie Dento-Faciale de Sousse et l’association GO3D ont le plaisir de vous convier à cet événement scientifique de pointe, organisé dans un cadre convivial, afin de faire rayonner, une fois encore, Monastir, haut lieu de rencontre de l’orthodontie tunisienne.",
+
+    "Je suis impatiente de partager ce moment avec vous !",
+],
 };
 
 export const sponsorGroups = [
