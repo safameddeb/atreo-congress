@@ -183,7 +183,17 @@ export const speakers = [
   summary:
  "Le résumé de la conférence sera bientôt disponible."
 },
+{
+  name: "Dr. Fethi Jebri",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: fethi,
 
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
 {
   name: "Dr. Hamza Ben Aissa ",
   nationality: "Tunisie",
@@ -286,6 +296,41 @@ export const speakers = [
   summary:
  "Le résumé de la conférence sera bientôt disponible."
 },
+{ name: "Dr. Mohamed Ben Attia",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: benattia,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+{ name: "Dr. Atef Souissi",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: homme,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
+
+
+{ name: "Dr. Abdallah",
+  nationality: "Tunisie",
+  flag: tunisie,
+  image: homme,
+
+  conferenceTitle: "Titre de sa conférence",
+
+  summary:
+ "Le résumé de la conférence sera bientôt disponible."
+},
+
 
 ];
 

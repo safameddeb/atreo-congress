@@ -568,10 +568,14 @@ className="welcome-photo absolute inset-0 h-full w-full object-cover object-top"
                 <p className="text-2xl font-black text-white sm:text-3xl">
                   {copresidentcongressWelcome.name}
                 </p>
-
-                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">
-Secrétaire adjointe de la Fédération Française d’Orthodontie 
-                </p>
+<p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">
+  <span className="block">Secrétaire du GO3D</span>
+  <span className="block">Secrétaire adjointe de la FFO</span>
+  <span className="block">Vice-trésorière de l’AFFF</span>
+  <span className="block">
+    Responsable de la commission scientifique du CEPOG
+  </span>
+</p>
               </div>
             </div>
 
