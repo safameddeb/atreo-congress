@@ -171,30 +171,31 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Partie droite : première affiche uniquement */}
-          <div className="poster-area relative mx-auto w-full max-w-[480px]">
-            {/* Décoration derrière le cadre */}
-            <div className="absolute -left-8 top-10 h-16 w-24 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm" />
+         {/* Partie droite : première affiche uniquement */}
+<div className="poster-area relative mx-auto w-full max-w-[480px]">
+  {/* Décoration derrière le cadre */}
+  <div className="absolute -left-3 top-10 h-16 w-24 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm sm:-left-8" />
 
-            <div className="absolute -right-7 bottom-12 h-14 w-20 rotate-6 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#8F6B18] opacity-80" />
+  <div className="absolute -right-2 bottom-12 h-14 w-20 rotate-6 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#8F6B18] opacity-80 sm:-right-7" />
 
-            {/* Cadre principal */}
-            <div className="poster-frame relative rounded-[2rem] border border-white/20 bg-white/15 p-3 shadow-2xl shadow-black/50 backdrop-blur-xl">
-              <div className="relative overflow-hidden rounded-[1.5rem]">
-                <img
-                  src={congress.posters[0]}
-                  alt="Affiche ATREO 1"
-                  className="block h-[650px] w-full object-cover" />
-                <div className="absolute left-4 top-4 rounded-full bg-black/50 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white backdrop-blur-md">
-                  Édition 2026
-                </div>
+  {/* Cadre principal */}
+  <div className="poster-frame relative rounded-[1.5rem] border border-white/20 bg-white/15 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl sm:rounded-[2rem] sm:p-3">
+    <div className="relative overflow-hidden rounded-[1.1rem] sm:rounded-[1.5rem]">
+      <img
+        src={congress.posters[0]}
+        alt="Affiche des Assises de l’Orthodontie 2026"
+        className="block h-auto w-full object-contain"
+      />
 
-                <div className="pointer-events-none absolute inset-0 rounded-[1.5rem] ring-1 ring-inset ring-white/15" />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="absolute left-3 top-3 rounded-full bg-black/50 px-3 py-2 text-[9px] font-black uppercase tracking-[0.15em] text-white backdrop-blur-md sm:left-4 sm:top-4 sm:px-4 sm:text-[10px] sm:tracking-[0.18em]">
+        Édition 2026
+      </div>
 
+      <div className="pointer-events-none absolute inset-0 rounded-[1.1rem] ring-1 ring-inset ring-white/15 sm:rounded-[1.5rem]" />
+    </div>
+  </div>
+</div>
+</div>
         {/* Animations dans le même fichier */}
         <style>{`
     /* Espacement uniforme entre toutes les sections de la page */
